@@ -1,10 +1,10 @@
 import SteamAppData from './steam_app_data';
 
-const STEAM_ICONS_TYPES = ['code', 'art', 'translation'];
-const STATUS_TYPES = ['ai', 'human', 'unknown'];
+const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'sound', 'voice'];
+const STATUS_TYPES = ['human', 'ai', 'unknown'];
 
 function getStatusForAppAndType(appId: number, type: string): number {
-	if (!SteamAppData || !SteamAppData[appId] || !SteamAppData[appId][type]) {
+	if (!SteamAppData || !SteamAppData[appId] || typeof SteamAppData[appId][type] !== 'number') {
 		return 2;
 	}
 
@@ -30,8 +30,6 @@ export default defineContentScript({
 			const status: string = STATUS_TYPES[getStatusForAppAndType(appId, iconType)]!;
 
 			const img = document.createElement('img');
-			console.log(`/status/${iconType}-${status}.png` as any);
-			console.log(browser.runtime.getURL(`/status/${iconType}-${status}.png` as any));
 			img.src = browser.runtime.getURL(`/status/${iconType}-${status}.png` as any);
 			
 			let style = 'max-height: 23px; vertical-align: middle;';
