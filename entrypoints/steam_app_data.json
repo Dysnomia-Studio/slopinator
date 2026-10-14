@@ -4,6 +4,7 @@
 		"code": 0,
 		"sound": 0,
 		"translation": 0,
+		"voice": 3,
 		"sources": [
 			"repo owner :)"
 		]
@@ -13,6 +14,7 @@
 		"code": 0,
 		"sound": 0,
 		"translation": 0,
+		"voice": 3,
 		"sources": [
 			"repo owner :)"
 		]
@@ -28,6 +30,7 @@
 		"code": 0,
 		"sound": 0,
 		"translation": 0,
+		"voice": 3,
 		"sources": [
 			"repo owner :)"
 		]

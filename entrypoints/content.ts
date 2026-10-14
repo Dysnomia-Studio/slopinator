@@ -1,7 +1,7 @@
 import SteamAppData from './steam_app_data';
 
 const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'sound', 'voice'];
-const STATUS_TYPES = ['human', 'ai', 'unknown'];
+const STATUS_TYPES = ['human', 'ai', 'unknown', 'disabled'];
 
 function getStatusForAppAndType(appId: number, type: string): number {
 	if (!SteamAppData || !SteamAppData[appId] || typeof SteamAppData[appId][type] !== 'number') {
