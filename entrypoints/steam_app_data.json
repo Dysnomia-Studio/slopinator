@@ -1,38 +1,48 @@
 {
-	"1299430": {
-		"art": 0,
-		"code": 0,
-		"sound": 0,
-		"translation": 0,
-		"voice": 3,
-		"sources": [
-			"repo owner :)"
-		]
-	},
-	"1730540": {
-		"art": 0,
-		"code": 0,
-		"sound": 0,
-		"translation": 0,
-		"voice": 3,
-		"sources": [
-			"repo owner :)"
-		]
-	},
-	"1808500": {
-		"voice": 1,
-		"sources": [
-			"https://www.gamespot.com/articles/arc-raiders-is-my-game-of-the-year-but-its-use-of-generative-ai-really-sucks/1100-6537140/"
-		]
-	},
-	"3928180": {
-		"art": 0,
-		"code": 0,
-		"sound": 0,
-		"translation": 0,
-		"voice": 3,
-		"sources": [
-			"repo owner :)"
-		]
-	}
+    "1299430": {
+        "art": 0,
+        "code": 0,
+        "sound": 0,
+        "translation": 0,
+        "voice": 3,
+        "sources": [
+            "repo owner :)"
+        ]
+    },
+    "1730540": {
+        "art": 0,
+        "code": 0,
+        "sound": 0,
+        "translation": 0,
+        "voice": 3,
+        "sources": [
+            "repo owner :)"
+        ]
+    },
+    "1808500": {
+        "voice": 1,
+        "sources": [
+            "https://www.gamespot.com/articles/arc-raiders-is-my-game-of-the-year-but-its-use-of-generative-ai-really-sucks/1100-6537140/"
+        ]
+    },
+    "3133320": {
+        "art": 0,
+        "code": 0,
+        "sound": 0,
+        "translation": 0,
+        "voice": 0,
+        "sources": [
+            "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "3928180": {
+        "art": 0,
+        "code": 0,
+        "sound": 0,
+        "translation": 0,
+        "voice": 3,
+        "sources": [
+            "repo owner :)"
+        ]
+    }
 }
