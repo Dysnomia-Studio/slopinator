@@ -49,6 +49,7 @@ export default defineContentScript({
 
 		const aiInfoRoot = document.createElement('span');
 		aiInfoRoot.classList.add('btnv6_blue_hoverfade', 'btn_medium');
+		aiInfoRoot.style = 'margin-right: 3px;';
 
 		const aiBadgesList = document.createElement('span');
 		aiInfoRoot.append(aiBadgesList);
