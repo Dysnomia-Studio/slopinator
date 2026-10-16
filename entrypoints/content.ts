@@ -15,6 +15,28 @@ function getStatusForAppAndType(appId: number, type: string): number {
 
 	return SteamAppData[appId][type];
 }
+function getAppSources(appId: number): string {
+	const sourcesList = SteamAppData[appId]?.sources as string[] ?? [];
+	if (SteamAppListBeforeGpt.includes(appId)) {
+		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).')
+	}
+
+	if (sourcesList.length === 0) {
+		sourcesList.push('N/A');
+	}
+
+	return ['Sources:<br/>', ...sourcesList.map((x) => {
+		if (x.startsWith(window.location.href)) {
+			return `- Text on the current page<br/>`;
+		}
+
+		if (x.startsWith('http')) {
+			return `- <a href="${x}" target="_blank">${x}</a><br/>`;
+		}
+
+		return `- ${x}<br/>`;
+	})].join('');
+}
 
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/app/*'],
@@ -46,6 +68,29 @@ export default defineContentScript({
 			aiBadgesList.append(img);
 		}
 
+		let sourcesVisible = false;
+		const aiInfoSources = document.createElement('div');
+		aiInfoSources.innerHTML = getAppSources(appId);
+
+		function updateAIInfoSourcesVisibility() {
+			let style = 'position: absolute;top: 35px;z-index: 10000;background: #3b4046;padding: 0.5rem;width: calc(100% - 1rem);display: ';
+			if (sourcesVisible) {
+				style += 'initial;';
+			} else {
+				style += 'none;';
+			}
+
+			aiInfoSources.style = style;
+		}
+
+		updateAIInfoSourcesVisibility();
+
+		aiBadgesList.addEventListener('click', async () => {
+			sourcesVisible = !sourcesVisible;
+			updateAIInfoSourcesVisibility();
+		});
+
 		document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoRoot);
+		document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoSources);
 	},
 });
