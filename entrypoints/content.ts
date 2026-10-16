@@ -1,9 +1,14 @@
+import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
 const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'sound', 'voice'];
 const STATUS_TYPES = ['human', 'ai', 'unknown', 'disabled'];
 
 function getStatusForAppAndType(appId: number, type: string): number {
+	if (SteamAppListBeforeGpt.includes(appId)) {
+		return 0;
+	}
+
 	if (!SteamAppData || !SteamAppData[appId] || typeof SteamAppData[appId][type] !== 'number') {
 		return 2;
 	}
