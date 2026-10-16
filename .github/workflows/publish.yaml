@@ -1,0 +1,59 @@
+name: Build & Release
+
+on:
+  push:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Zip extensions
+        run: |
+          npm run zip
+          npm run zip:firefox
+
+
+      - name: Upload binaries to prerelease
+        uses: svenstaro/upload-release-action@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./.output/*
+          tag: Prerelease
+          overwrite: true
+          file_glob: true
+
+      - name: Upload binaries to prerelease
+        uses: svenstaro/upload-release-action@v2
+        if: startsWith(github.event.ref, 'refs/tags/')
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./.output/*
+          tag: ${{ github.head_ref || github.ref_name }}
+          overwrite: true
+          file_glob: true
+
+      - name: Submit to stores
+        if: startsWith(github.event.ref, 'refs/tags/')
+        run: |
+          npx wxt submit \
+            --chrome-zip .output/*-chrome.zip \
+            --firefox-zip .output/*-firefox.zip --firefox-sources-zip .output/*-sources.zip
+        env:
+          CHROME_EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
+          CHROME_CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          FIREFOX_EXTENSION_ID: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
