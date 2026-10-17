@@ -2,21 +2,33 @@
 	<img src="public/doof-pic.png" />
 </p>
 
-A chrome/firefox extension to enhance documentation about Generative AI usage on public apps, especially Steam games.
+A chrome/firefox extension to show the Generative AI usage on public apps, especially on Steam games.  
+This will be shown like that:   
 
-E.g:  
 ![Examples](readme-example.png)
 
 # Installation
 
-TODO
+Chrome web store: TODO  
+Firefox addon store: TODO  
+
+Pre-release versions are also available in the "Releases" tab.  
+
+# Support me
+
+I do not plan to have any donation or revenue directly related to the browser extension.  
+However, if you want to support me, check out my games on [Itch.io](https://elanis.itch.io) or [Steam](https://store.steampowered.com/developer/dysnomia).
 
 # Contribution
 
 You can add new data on Steam Games, or update them by editing [entrypoints/steam_app_data.json](entrypoints/steam_app_data.json).  
-**Please make one Pull Request per game, and add sources URLs for your data.** 
+**Please make one Pull Request per game, and add sources URLs for any new data.** 
 
-# Licence
+# Privacy & Data shared
+
+Your privacy is important. So I decided that no server calls are being made by this extension. Every data is stored directly inside the bundled extension, and no telemetry is used.
+
+# Licenses
 
 This repository code is licensed under MIT.  
 
