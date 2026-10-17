@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 
 const chatGptReleaseDate = new Date("2022-11-30");
 
-const dataTxt = await fs.readFile("tools/GenerateNotUpdatedAppsList/bin/Debug/net10.0/lastupdates.json", "utf8");
+const dataTxt = await fs.readFile("tools/GenerateNotUpdatedAppsList/lastupdates.json", "utf8");
 const data = JSON.parse(dataTxt);
 
 const beforeGptGames = [];
