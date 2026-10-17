@@ -10,6 +10,13 @@ export default defineConfig({
         "extension_ids": ["*"],
         "matches": ["*://*/*"]
       }
-    ]
+    ],
+    browser_specific_settings: {
+      gecko: {
+        data_collection_permissions: {
+          required: ['none'],
+        },
+      },
+    },
   }
 });
