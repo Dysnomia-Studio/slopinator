@@ -35,7 +35,7 @@ function getAppSources(appId: number): string {
 		}
 
 		return `- ${x}<br/>`;
-	})].join('');
+	})].join('') + '<br/><br/><a href="https://github.com/Dysnomia-Studio/slopinator#contribution" target="_blank">Incorrect or incomplete data? You can contribute to the extension data here!</a>';
 }
 
 export default defineContentScript({
