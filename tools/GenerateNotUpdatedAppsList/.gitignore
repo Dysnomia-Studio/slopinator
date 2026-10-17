@@ -3,7 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-appids.csv
+steam_app_before_gpt.json
 
 # User-specific files
 *.suo

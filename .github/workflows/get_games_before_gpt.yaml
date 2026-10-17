@@ -1,0 +1,32 @@
+name: Update "steam_app_before_gpt.json"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 0'
+      timezone: 'Europe/Paris'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          cache: 'npm'
+      - run: |
+          cd tools/GenerateNotUpdatedAppsList/
+          cp ../../entrypoints/steam_app_before_gpt.json .
+          dotnet run GenerateNotUpdatedAppsList.csproj
+          cd ../..
+          node tools_cli_get_games_before_chatgpt.js
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Update steam_app_before_gpt.json"
+          file_pattern: entrypoints/steam_app_before_gpt.json

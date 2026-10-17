@@ -5,8 +5,8 @@ using System.Text.Json;
 const int BatchSize = 100;
 const int MaxAttempts = 3;
 
-var appIdFile = await File.ReadAllTextAsync("appids.csv");
-List<uint> appIds = appIdFile.Split("\r\n").Where((x) => x != "").Select((x) => uint.Parse(x)).ToList();
+List<uint> appIds = JsonSerializer.Deserialize<List<uint>>(await File.ReadAllTextAsync("steam_app_before_gpt.json"))!;
+// TODO: test all public apps as well
 Console.WriteLine($"Found {appIds.Count} app ids.");
 
 var client = new SteamClient();
