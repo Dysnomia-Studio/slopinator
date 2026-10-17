@@ -24,6 +24,8 @@ However, if you want to support me, check out my games on [Itch.io](https://elan
 You can add new data on Steam Games, or update them by editing [entrypoints/steam_app_data.json](entrypoints/steam_app_data.json).  
 **Please make one Pull Request per game, and add sources URLs for any new data.** 
 
+If you want to contribute to the extension code, please refer to the [Wxt Documentation](https://wxt.dev/guide/installation.html), and produce clear, understandable, maintenable code. One pull request per feature/bug fix is required.
+
 # Privacy & Data shared
 
 Your privacy is important. So I decided that no server calls are being made by this extension. Every data is stored directly inside the bundled extension, and no telemetry is used.
