@@ -47,7 +47,7 @@ jobs:
         if: startsWith(github.event.ref, 'refs/tags/')
         run: |
           npx wxt submit \
-            --chrome-zip .output/*-chrome.zipp \
+            --chrome-zip .output/*-chrome.zip \
             --firefox-zip .output/*-firefox.zip --firefox-sources-zip .output/*-sources.zip
         env:
           CHROME_API_VERSION: 'v2'
