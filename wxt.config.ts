@@ -13,7 +13,7 @@ export default defineConfig({
     ],
     browser_specific_settings: {
       gecko: {
-        id: "slop-inator",
+        id: "afa5d966-ad04-4c4e-85f4-6115517e965b",
         data_collection_permissions: {
           required: ['none'],
         },
