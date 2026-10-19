@@ -15,27 +15,49 @@ function getStatusForAppAndType(appId: number, type: string): number {
 
 	return SteamAppData[appId][type];
 }
-function getAppSources(appId: number): string {
+
+function getAppDetails(appId: number): HTMLElement {
 	const sourcesList = SteamAppData[appId]?.sources as string[] ?? [];
 	if (SteamAppListBeforeGpt.includes(appId)) {
-		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).')
+		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).');
 	}
 
 	if (sourcesList.length === 0) {
 		sourcesList.push('N/A');
 	}
 
-	return ['Sources:<br/>', ...sourcesList.map((x) => {
-		if (x.startsWith(window.location.href)) {
-			return `- Text on the current page<br/>`;
+	const rootElement = document.createElement('div');
+
+	rootElement.append('Sources:', document.createElement('br'));
+
+	for (const source of sourcesList) {
+		if (source.startsWith(window.location.href)) {
+			rootElement.append('- Text on the current page');
+		} else if (source.startsWith('http')) {
+			const link = document.createElement('a');
+			link.href = source;
+			link.target = '_blank';
+			link.textContent = source;
+			rootElement.append('- ', link);
+		} else {
+			rootElement.append(`- ${source}`);
 		}
 
-		if (x.startsWith('http')) {
-			return `- <a href="${x}" target="_blank">${x}</a><br/>`;
-		}
+		rootElement.append(document.createElement('br'));
+	}
 
-		return `- ${x}<br/>`;
-	})].join('') + '<br/><br/><a href="https://github.com/Dysnomia-Studio/slopinator#contribution" target="_blank">Incorrect or incomplete data? You can contribute to the extension data here!</a>';
+	const contributeLink = document.createElement('a');
+	contributeLink.href = 'https://github.com/Dysnomia-Studio/slopinator#contribution';
+	contributeLink.target = '_blank';
+	contributeLink.textContent = 'Incorrect or incomplete data? You can contribute to the extension data here!';
+
+	rootElement.append(
+		document.createElement('br'),
+		document.createElement('br'),
+		contributeLink,
+	);
+
+	return rootElement;
 }
 
 export default defineContentScript({
@@ -70,8 +92,7 @@ export default defineContentScript({
 		}
 
 		let sourcesVisible = false;
-		const aiInfoSources = document.createElement('div');
-		aiInfoSources.innerHTML = getAppSources(appId);
+		const aiInfoDetails = getAppDetails(appId);
 
 		function updateAIInfoSourcesVisibility() {
 			let style = 'position: absolute;top: 35px;z-index: 10000;background: #3b4046;padding: 0.5rem;width: calc(100% - 1rem);display: ';
@@ -81,7 +102,7 @@ export default defineContentScript({
 				style += 'none;';
 			}
 
-			aiInfoSources.style = style;
+			aiInfoDetails.style = style;
 		}
 
 		updateAIInfoSourcesVisibility();
@@ -92,6 +113,6 @@ export default defineContentScript({
 		});
 
 		document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoRoot);
-		document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoSources);
+		document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoDetails);
 	},
 });
