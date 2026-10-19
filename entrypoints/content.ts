@@ -17,7 +17,7 @@ function getStatusForAppAndType(appId: number, type: string): number {
 }
 
 function getAppDetails(appId: number): HTMLElement {
-	const sourcesList = SteamAppData[appId]?.sources as string[] ?? [];
+	const sourcesList = [...(SteamAppData[appId]?.sources as string[] ?? [])];;
 	if (SteamAppListBeforeGpt.includes(appId)) {
 		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).');
 	}
