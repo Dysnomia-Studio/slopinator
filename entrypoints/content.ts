@@ -211,7 +211,6 @@ async function setSteamSearchPageBadges() {
 	const list = document.querySelectorAll('#search_resultsRows > a');
 	for (const item of list) {
 		const appId = parseInt(item.getAttribute('data-ds-appid') ?? '', 10);
-		console.log(appId);
 		if (Number.isNaN(appId)) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
