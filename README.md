@@ -28,8 +28,8 @@ If you want to contribute to the extension code, please refer to the [Wxt Docume
 
 # Privacy & Data shared
 
-Your privacy is important. I will never recieve any of your data nor does any third party service. No telemetry is used.
-The only http calls are in the app are on the site itself (e.g: Steam calls steam, because I sometimes need data from another store page). 
+Your privacy is important. I will never recieve any of your data nor does any third party service. No telemetry is used.  
+The only http calls are in the app are on the site itself (e.g: Steam calls steam, because I sometimes need data from another store page).  
 
 # Licenses
 
