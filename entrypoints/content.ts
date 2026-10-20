@@ -41,7 +41,7 @@ async function getMetadataFromStorePage(appId: number): Promise<void> {
 				if (parentApps[appId] !== 0 && parentApps[appId] !== appId) {
 					await getMetadataFromStorePage(parentApps[appId]!);
 
-					aiDisclosed[appId] = aiDisclosed[parentApps[appId]!]!;
+					aiDisclosed[appId] = aiDisclosed[appId] || aiDisclosed[parentApps[appId]!]!;
 				}
 			} catch (e) {
 				console.error('Error when getting disclosure status', e);
