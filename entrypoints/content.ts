@@ -29,11 +29,15 @@ async function getStatusForAppAndType(appId: number, type: string): Promise<numb
 		return STATUS_TYPES_HUMAN;
 	}
 
-	if (!SteamAppData || !SteamAppData[appId] || typeof SteamAppData[appId][type] !== 'number') {
+	if (!SteamAppData || !SteamAppData[appId]) {
 		if (await isAIDisclosed(appId)) {
 			return STATUS_TYPES_WARNING;
 		}
 
+		return 2;
+	}
+
+	if (typeof SteamAppData[appId][type] !== 'number') {
 		return 2;
 	}
 
@@ -100,19 +104,8 @@ function getStatusImg(iconType: string, status: string) {
 	return `/status/${iconType}-${status}.png` as any;
 }
 
-async function setStoreBadges() {
-	const appId = parseInt(window.location.href.split('/')[4] ?? '', 10);
-	if (Number.isNaN(appId)) {
-		console.error('[SlopInator] Error: Cannot parse steam appid');
-		return;
-	}
-
-	const aiInfoRoot = document.createElement('span');
-	aiInfoRoot.classList.add('btnv6_blue_hoverfade', 'btn_medium');
-	aiInfoRoot.style = 'margin-right: 3px;';
-
+async function generateBadges(appId: number) {
 	const aiBadgesList = document.createElement('span');
-	aiInfoRoot.append(aiBadgesList);
 
 	for (const iconType of STEAM_ICONS_TYPES) {
 		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
@@ -150,13 +143,52 @@ async function setStoreBadges() {
 		updateAIInfoSourcesVisibility();
 	});
 
+	return { aiBadgesList, aiInfoDetails };
+}
+
+async function setSteamStorePageBadges() {
+	const appId = parseInt(window.location.href.split('/')[4] ?? '', 10);
+	if (Number.isNaN(appId)) {
+		console.error('[SlopInator] Error: Cannot parse steam appid');
+		return;
+	}
+
+	const { aiBadgesList, aiInfoDetails } = (await generateBadges(appId))!;
+
+	const aiInfoRoot = document.createElement('span');
+	aiInfoRoot.classList.add('btnv6_blue_hoverfade', 'btn_medium');
+	aiInfoRoot.style = 'margin-right: 3px;';
+	aiInfoRoot.append(aiBadgesList);
+
 	document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoRoot);
 	document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoDetails);
 }
 
+async function setSteamSearchPageBadges() {
+	const list = document.querySelectorAll('#search_resultsRows > a');
+	for (const item of list) {
+		const appId = parseInt(item.getAttribute('data-ds-appid') ?? '', 10);
+		console.log(appId);
+		if (Number.isNaN(appId)) {
+			console.error('[SlopInator] Error: Cannot parse steam appid');
+			continue;
+		}
+		const { aiBadgesList } = (await generateBadges(appId))!;
+
+		const subItem = item.querySelector('.responsive_search_name_combined');
+		subItem?.append(aiBadgesList);
+	}
+}
+
+
 export default defineContentScript({
-	matches: ['*://store.steampowered.com/app/*'],
+	matches: ['*://store.steampowered.com/*'],
 	main() {
-		setStoreBadges();
+		if (window.location.href.startsWith('https://store.steampowered.com/app/')) {
+			setSteamStorePageBadges();
+		}
+		if (window.location.href.startsWith('https://store.steampowered.com/search')) {
+			setSteamSearchPageBadges();
+		}
 	},
 });
