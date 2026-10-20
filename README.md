@@ -10,7 +10,7 @@ This will be shown like that:
 # Installation
 
 Chrome web store: TODO  
-Firefox addon store: TODO  
+Firefox addon store: https://addons.mozilla.org/fr/firefox/addon/slop-inator/  
 
 Pre-release versions are also available in the "Releases" tab.  
 
