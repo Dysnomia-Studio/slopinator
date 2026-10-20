@@ -6,22 +6,61 @@ const STATUS_TYPES = ['human', 'ai', 'unknown', 'disabled', 'warning', 'past'];
 const STATUS_TYPES_HUMAN = STATUS_TYPES.indexOf('human');
 const STATUS_TYPES_WARNING = STATUS_TYPES.indexOf('warning');
 const aiDisclosed: { [key: number]: boolean } = {};
+const parentApps: { [key: number]: number } = {};
+const metadataQueries: { [key: number]: Promise<void> } = {};
+
+function getParentAppId(htmlStr: string) {
+	try {
+		return parseInt(
+			htmlStr
+				.split('<div class=\"blockbg\">')[1]
+				.split('<a href=\"https://store.steampowered.com/app/')[1]
+				.split('/')[0],
+			10
+		);
+	} catch {
+		return 0;
+	}
+}
+
+function parseStorePage(appId: number, html: string) {
+	aiDisclosed[appId] = html.includes('AI Generated Content Disclosure');
+	parentApps[appId] = getParentAppId(html);
+	console.debug(`Found app ${parentApps[appId]} as parent of ${appId}`);
+}
+
+async function getMetadataFromStorePage(appId: number): Promise<void> {
+	if (!metadataQueries[appId]) {
+		metadataQueries[appId] = (async () => {
+			try {
+				const res = await fetch(`https://store.steampowered.com/app/${appId}/?l=english`);
+				const html = await res.text();
+
+				parseStorePage(appId, html);
+
+				if (parentApps[appId] !== 0 && parentApps[appId] !== appId) {
+					await getMetadataFromStorePage(parentApps[appId]!);
+
+					aiDisclosed[appId] = aiDisclosed[parentApps[appId]!]!;
+				}
+			} catch (e) {
+				console.error('Error when getting disclosure status', e);
+			}
+		})();
+	}
+
+	await metadataQueries[appId];
+}
+
 
 async function isAIDisclosed(appId: number) {
-	try {
-		if (aiDisclosed[appId] !== undefined) {
-			return aiDisclosed[appId];
-		}
-
-		const res = await fetch(`https://store.steampowered.com/app/${appId}/?l=english`);
-
-		aiDisclosed[appId] = (await res.text()).includes('AI Generated Content Disclosure');
-
+	if (aiDisclosed[appId] !== undefined) {
 		return aiDisclosed[appId];
-	} catch (e) {
-		console.error('Error when getting disclosure status');
-		return false;
 	}
+
+	await getMetadataFromStorePage(appId);
+
+	return aiDisclosed[appId] ?? false;
 }
 
 async function getStatusForAppAndType(appId: number, type: string): Promise<number> {
@@ -29,19 +68,23 @@ async function getStatusForAppAndType(appId: number, type: string): Promise<numb
 		return STATUS_TYPES_HUMAN;
 	}
 
-	if (!SteamAppData || !SteamAppData[appId]) {
-		if (await isAIDisclosed(appId)) {
+	await getMetadataFromStorePage(appId);
+
+	const localAppId = parentApps[appId] ?? appId;
+
+	if (!SteamAppData || !SteamAppData[localAppId]) {
+		if (await isAIDisclosed(localAppId)) {
 			return STATUS_TYPES_WARNING;
 		}
 
 		return 2;
 	}
 
-	if (typeof SteamAppData[appId][type] !== 'number') {
+	if (typeof SteamAppData[localAppId][type] !== 'number') {
 		return 2;
 	}
 
-	return SteamAppData[appId][type];
+	return SteamAppData[localAppId][type];
 }
 
 async function getAppDetails(appId: number): Promise<HTMLElement> {
