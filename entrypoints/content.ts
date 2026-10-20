@@ -212,17 +212,28 @@ async function setSteamStorePageBadges() {
 	document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoDetails);
 }
 
-async function setSteamSearchPageBadges() {
+let steamSearchPageIntervalIterationId = 0;
+async function setSteamSearchPageBadges(iterationId: number) {
 	const list = document.querySelectorAll('#search_resultsRows > a');
 	for (const item of list) {
+		if (iterationId !== steamSearchPageIntervalIterationId) {
+			return;
+		}
+
+		const subItem = item.querySelector('.responsive_search_name_combined');
+		if (subItem?.querySelector('.ai-badges-list')) {
+			continue;
+		}
+
 		const appId = parseInt(item.getAttribute('data-ds-appid') ?? '', 10);
 		if (Number.isNaN(appId)) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
 		}
 		const { aiBadgesList } = (await generateBadges(appId))!;
-
-		const subItem = item.querySelector('.responsive_search_name_combined');
+		if (subItem?.querySelector('.ai-badges-list')) {
+			continue;
+		}
 		subItem?.append(aiBadgesList);
 	}
 }
@@ -293,7 +304,9 @@ export default defineContentScript({
 			setSteamStorePageBadges();
 		}
 		if (window.location.href.startsWith('https://store.steampowered.com/search')) {
-			setSteamSearchPageBadges();
+			setInterval(() => {
+				setSteamSearchPageBadges(++steamSearchPageIntervalIterationId);
+			}, 1000);
 		}
 		if (window.location.href.startsWith('https://store.steampowered.com/sale/')) {
 			setInterval(() => {
