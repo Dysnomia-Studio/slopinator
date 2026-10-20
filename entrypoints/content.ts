@@ -149,6 +149,7 @@ function getStatusImg(iconType: string, status: string) {
 
 async function generateBadges(appId: number) {
 	const aiBadgesList = document.createElement('span');
+	aiBadgesList.classList.add('ai-badges-list');
 
 	for (const iconType of STEAM_ICONS_TYPES) {
 		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
@@ -189,8 +190,12 @@ async function generateBadges(appId: number) {
 	return { aiBadgesList, aiInfoDetails };
 }
 
+function getAppIdFromUrl(url: string) {
+	return parseInt(url.split('/')[4] ?? '', 10);
+}
+
 async function setSteamStorePageBadges() {
-	const appId = parseInt(window.location.href.split('/')[4] ?? '', 10);
+	const appId = getAppIdFromUrl(window.location.href);
 	if (Number.isNaN(appId)) {
 		console.error('[SlopInator] Error: Cannot parse steam appid');
 		return;
@@ -222,6 +227,64 @@ async function setSteamSearchPageBadges() {
 	}
 }
 
+let steamSalePageIntervalIterationId = 0;
+async function setSteamSalePageBadges(iterationId: number) {
+	const largeContainersList = document.querySelectorAll('.SaleSectionContainer.center_row_trgt.ItemCount_1');
+	for (const item of largeContainersList) {
+		if (iterationId !== steamSalePageIntervalIterationId) {
+			return;
+		}
+
+		const titleLink = item.querySelector('a');
+		const parent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
+		if (parent?.querySelector('.ai-badges-list')) {
+			continue;
+		}
+
+		const appId = getAppIdFromUrl(titleLink?.href ?? '');
+		if (Number.isNaN(appId)) {
+			console.error('[SlopInator] Error: Cannot parse steam appid');
+			continue;
+		}
+		const { aiBadgesList } = (await generateBadges(appId))!;
+		const root = document.createElement('span');
+		root.appendChild(aiBadgesList);
+		if (parent?.querySelector('.ai-badges-list')) {
+			continue;
+		}
+
+		parent?.prepend(root);
+
+		return;
+	}
+
+	const thinContainersList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
+	for (const item of thinContainersList) {
+		if (iterationId !== steamSalePageIntervalIterationId) {
+			return;
+		}
+
+		const titleLink = item.querySelector('a');
+		if (titleLink?.parentNode?.querySelector('.ai-badges-list')) {
+			continue;
+		}
+
+		const appId = getAppIdFromUrl(titleLink?.href ?? '');
+		if (Number.isNaN(appId)) {
+			console.error('[SlopInator] Error: Cannot parse steam appid');
+			continue;
+		}
+		const { aiBadgesList } = (await generateBadges(appId))!;
+		const root = document.createElement('span');
+		root.style = "margin-left: 1rem;"
+		root.appendChild(aiBadgesList);
+		if (titleLink?.parentNode?.querySelector('.ai-badges-list')) {
+			continue;
+		}
+
+		titleLink?.parentNode?.append(root);
+	}
+}
 
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/*'],
@@ -231,6 +294,11 @@ export default defineContentScript({
 		}
 		if (window.location.href.startsWith('https://store.steampowered.com/search')) {
 			setSteamSearchPageBadges();
+		}
+		if (window.location.href.startsWith('https://store.steampowered.com/sale/')) {
+			setInterval(() => {
+				setSteamSalePageBadges(++steamSalePageIntervalIterationId);
+			}, 1000);
 		}
 	},
 });
