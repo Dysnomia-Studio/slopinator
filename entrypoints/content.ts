@@ -40,7 +40,7 @@ async function getStatusForAppAndType(appId: number, type: string): Promise<numb
 	return SteamAppData[appId][type];
 }
 
-function getAppDetails(appId: number): HTMLElement {
+async function getAppDetails(appId: number): Promise<HTMLElement> {
 	const sourcesList = [...(SteamAppData[appId]?.sources as string[] ?? [])];;
 	if (SteamAppListBeforeGpt.includes(appId)) {
 		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).');
@@ -52,6 +52,13 @@ function getAppDetails(appId: number): HTMLElement {
 
 	const rootElement = document.createElement('div');
 
+	rootElement.append('Badges:', document.createElement('br'));
+	for (const iconType of STEAM_ICONS_TYPES) {
+		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
+		rootElement.append('- ', iconType, ': ', status, document.createElement('br'));
+	}
+
+	rootElement.append(document.createElement('br'));
 	rootElement.append('Sources:', document.createElement('br'));
 
 	for (const source of sourcesList) {
@@ -123,7 +130,7 @@ async function setStoreBadges() {
 	}
 
 	let sourcesVisible = false;
-	const aiInfoDetails = getAppDetails(appId);
+	const aiInfoDetails = await getAppDetails(appId);
 
 	function updateAIInfoSourcesVisibility() {
 		let style = 'position: absolute;top: 35px;z-index: 10000;background: #3b4046;padding: 0.5rem;width: calc(100% - 1rem);display: ';
