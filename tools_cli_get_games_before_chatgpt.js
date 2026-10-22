@@ -16,4 +16,4 @@ for (const appId in data) {
 console.log(Object.keys(data).length);
 console.log(beforeGptGames.length);
 
-await fs.writeFile("entrypoints/steam_app_before_gpt.json", JSON.stringify(beforeGptGames));
+await fs.writeFile("entrypoints/steam_app_before_gpt.json", JSON.stringify(beforeGptGames, null, 4));
