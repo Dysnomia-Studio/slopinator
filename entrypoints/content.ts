@@ -76,7 +76,7 @@ async function getStatusForAppAndType(appId: number, type: string): Promise<numb
 
 	const localAppId = parentApps[appId] ?? appId;
 
-	if (!SteamAppData || !SteamAppData[localAppId]) {
+	if (!SteamAppData?.[localAppId]) {
 		if (await isAIDisclosed(localAppId)) {
 			return STATUS_TYPES_WARNING;
 		}
@@ -148,7 +148,7 @@ function getStatusImg(iconType: string, status: string) {
 		simplifiedStatus = 'warning';
 	}
 
-	return `/status/${iconType}-${status}.png` as any;
+	return `/status/${iconType}-${simplifiedStatus}.png` as any;
 }
 
 async function generateBadges(appId: number) {
@@ -201,7 +201,7 @@ async function setSteamStorePageBadges() {
 		return;
 	}
 
-	const { aiBadgesList, aiInfoDetails } = (await generateBadges(appId))!;
+	const { aiBadgesList, aiInfoDetails } = await generateBadges(appId);
 
 	const aiInfoRoot = document.createElement('span');
 	aiInfoRoot.classList.add('btnv6_blue_hoverfade', 'btn_medium');
