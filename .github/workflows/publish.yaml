@@ -22,8 +22,13 @@ jobs:
           npm run zip
           npm run zip:firefox
 
+      - name: Delete the previous "Prerelease" tag
+        if: github.ref == 'refs/heads/main'
+        run: gh release delete 'Prerelease' --cleanup-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload binaries to prerelease
+      - name: Upload binaries to "Prerelease"
         uses: svenstaro/upload-release-action@v2
         if: github.ref == 'refs/heads/main'
         with:
@@ -32,6 +37,7 @@ jobs:
           tag: Prerelease
           overwrite: true
           file_glob: true
+          prerelease: true
 
       - name: Upload binaries to prerelease
         uses: svenstaro/upload-release-action@v2
