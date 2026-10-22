@@ -1,0 +1,15 @@
+{
+    "name": "Crime Scene Cleaner",
+    "steamStoreAppId": "1040200",
+    "aiFlags": {
+        "art": "human",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1040200/Crime_Scene_Cleaner/"
+    ]
+}

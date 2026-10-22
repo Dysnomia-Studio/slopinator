@@ -1,0 +1,15 @@
+{
+    "name": "Your Mom",
+    "steamStoreAppId": "4147820",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4147820/Your_Mom/"
+    ]
+}

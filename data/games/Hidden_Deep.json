@@ -1,0 +1,15 @@
+{
+    "name": "Hidden Deep",
+    "steamStoreAppId": "976890",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/976890/Hidden_Deep/"
+    ]
+}

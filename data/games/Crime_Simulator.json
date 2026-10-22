@@ -1,0 +1,15 @@
+{
+    "name": "Crime Simulator",
+    "steamStoreAppId": "2737070",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2737070/Crime_Simulator/"
+    ]
+}

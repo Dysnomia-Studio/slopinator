@@ -1,0 +1,15 @@
+{
+    "name": "Shawarma Legend",
+    "steamStoreAppId": "3036080",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3036080/Shawarma_Legend/"
+    ]
+}

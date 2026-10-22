@@ -1,0 +1,24 @@
+name: Regenerate "steam_app_data.json"
+on:
+  push:
+    paths:
+      - 'data/games/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+          cache: 'npm'
+      - run: |
+          node tools_cli_regenerate_steam_app_data_json.js
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Auto-regenerate steam_app_data.json"
+          file_pattern: entrypoints/steam_app_data.json

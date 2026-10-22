@@ -1,0 +1,15 @@
+{
+    "name": "Train Sim World® 5",
+    "steamStoreAppId": "2967990",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2967990/Train_Sim_World_5/"
+    ]
+}

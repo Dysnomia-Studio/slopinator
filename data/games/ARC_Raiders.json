@@ -1,0 +1,15 @@
+{
+    "name": "ARC Raiders",
+    "steamStoreAppId": "1808500",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://www.gamespot.com/articles/arc-raiders-is-my-game-of-the-year-but-its-use-of-generative-ai-really-sucks/1100-6537140/"
+    ]
+}

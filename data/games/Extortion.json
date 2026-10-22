@@ -1,0 +1,15 @@
+{
+    "name": "Extortion",
+    "steamStoreAppId": "1299430",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "human",
+        "voice": "disabled"
+    },
+    "sources": [
+        "Slop-Inator developer created this game!"
+    ]
+}

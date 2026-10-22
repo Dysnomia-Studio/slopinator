@@ -1,0 +1,15 @@
+{
+    "name": "The Dreams in the Peacock House",
+    "steamStoreAppId": "4693460",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+    ]
+}

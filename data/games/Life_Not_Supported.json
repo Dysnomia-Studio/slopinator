@@ -1,0 +1,15 @@
+{
+    "name": "Life Not Supported",
+    "steamStoreAppId": "1670810",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+    ]
+}

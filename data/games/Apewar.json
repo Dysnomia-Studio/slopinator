@@ -1,0 +1,15 @@
+{
+    "name": "Apewar",
+    "steamStoreAppId": "2306590",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2306590/Apewar/"
+    ]
+}

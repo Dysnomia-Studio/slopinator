@@ -1,10 +1,7 @@
+import { STATUS_TYPES, STATUS_TYPES_HUMAN, STATUS_TYPES_WARNING, STEAM_ICONS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
-const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'marketing', 'sound', 'voice'];
-const STATUS_TYPES = ['human', 'ai', 'unknown', 'disabled', 'warning', 'past'];
-const STATUS_TYPES_HUMAN = STATUS_TYPES.indexOf('human');
-const STATUS_TYPES_WARNING = STATUS_TYPES.indexOf('warning');
 const aiDisclosed: { [key: number]: boolean } = {};
 const parentApps: { [key: number]: number } = {};
 const metadataQueries: { [key: number]: Promise<void> } = {};

@@ -1,0 +1,15 @@
+{
+    "name": "Drifter Dynasty",
+    "steamStoreAppId": "3824630",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "The Operator",
+    "steamStoreAppId": "1771980",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "human"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1771980/The_Operator/"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Logistik",
+    "steamStoreAppId": "3928180",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "human",
+        "voice": "disabled"
+    },
+    "sources": [
+        "Slop-Inator developer created this game!"
+    ]
+}

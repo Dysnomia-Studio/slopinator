@@ -1,0 +1,15 @@
+{
+    "name": "Fast Food Simulator",
+    "steamStoreAppId": "2916430",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2916430/Fast_Food_Simulator/"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "The Quinfall",
+    "steamStoreAppId": "2294660",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2294660/The_Quinfall/"
+    ]
+}

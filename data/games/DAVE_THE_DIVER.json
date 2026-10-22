@@ -1,0 +1,15 @@
+{
+    "name": "DAVE THE DIVER",
+    "steamStoreAppId": "1868140",
+    "aiFlags": {
+        "art": "human",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "ai",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/"
+    ]
+}
