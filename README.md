@@ -2,6 +2,9 @@
 	<img src="public/doof-pic.png" />
 </p>
 
+[![Reliability Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=slopinator&metric=reliability_rating)](https://sonar.dysnomia.studio/dashboard?id=slopinator) [![Maintainability Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=slopinator&metric=sqale_rating)](https://sonar.dysnomia.studio/dashboard?id=slopinator) [![Security Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=slopinator&metric=security_rating)](https://sonar.dysnomia.studio/dashboard?id=slopinator)  
+[![Duplicated Lines (%)](https://sonar.dysnomia.studio/api/project_badges/measure?project=slopinator&metric=duplicated_lines_density)](https://sonar.dysnomia.studio/dashboard?id=slopinator) [![Coverage](https://sonar.dysnomia.studio/api/project_badges/measure?project=slopinator&metric=coverage)](https://sonar.dysnomia.studio/dashboard?id=slopinator)
+
 A chrome/firefox extension to show the Generative AI usage on public apps, especially on Steam games.  
 This will be shown like that:   
 
