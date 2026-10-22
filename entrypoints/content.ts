@@ -1,7 +1,7 @@
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
-const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'sound', 'voice'];
+const STEAM_ICONS_TYPES = ['code', 'art', 'translation', 'marketing', 'sound', 'voice'];
 const STATUS_TYPES = ['human', 'ai', 'unknown', 'disabled', 'warning', 'past'];
 const STATUS_TYPES_HUMAN = STATUS_TYPES.indexOf('human');
 const STATUS_TYPES_WARNING = STATUS_TYPES.indexOf('warning');
@@ -70,7 +70,7 @@ async function isAIDisclosed(appId: number) {
 }
 
 async function getStatusForAppAndType(appId: number, type: string): Promise<number> {
-	if (SteamAppListBeforeGpt.includes(appId)) {
+	if (SteamAppListBeforeGpt.includes(appId) && type != 'marketing') {
 		return STATUS_TYPES_HUMAN;
 	}
 
