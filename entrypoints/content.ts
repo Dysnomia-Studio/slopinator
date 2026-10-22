@@ -11,7 +11,7 @@ const metadataQueries: { [key: number]: Promise<void> } = {};
 
 function getParentAppId(htmlStr: string) {
 	try {
-		const appId = parseInt(
+		const appId = Number.parseInt(
 			htmlStr
 				.split('<div class=\"blockbg\">')[1]
 				?.split('<a href=\"https://store.steampowered.com/app/')[1]
@@ -197,7 +197,7 @@ async function generateBadges(appId: number) {
 }
 
 function getAppIdFromUrl(url: string) {
-	return parseInt(url.split('/')[4] ?? '', 10);
+	return Number.parseInt(url.split('/')[4] ?? '', 10);
 }
 
 async function setSteamStorePageBadges() {
@@ -231,7 +231,7 @@ async function setSteamSearchPageBadges(iterationId: number) {
 			continue;
 		}
 
-		const appId = parseInt(item.getAttribute('data-ds-appid') ?? '', 10);
+		const appId = Number.parseInt(item.getAttribute('data-ds-appid') ?? '', 10);
 		if (Number.isNaN(appId)) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;

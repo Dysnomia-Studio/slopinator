@@ -9,7 +9,7 @@ const beforeGptGames = [];
 for (const appId in data) {
 	const lastUpdateDate = new Date(data[appId]);
 	if (lastUpdateDate.getTime() <= chatGptReleaseDate.getTime()) {
-		beforeGptGames.push(parseInt(appId, 10));
+		beforeGptGames.push(Number.parseInt(appId, 10));
 	}
 }
 
