@@ -1,11 +1,10 @@
 import './App.css';
-import wxtLogo from '/doof-pic.png';
 
 function App() {
 	return (
 		<>
 			<h1>Behold! The Slop-Inator!</h1>
-			<img src={wxtLogo} />
+			<img src="/doof-pic.png" alt="Behold! The Slop-Inator!" />
 		</>
 	);
 }

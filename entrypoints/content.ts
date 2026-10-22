@@ -1,4 +1,5 @@
 import { STATUS_TYPES, STATUS_TYPES_HUMAN, STATUS_TYPES_WARNING, STEAM_ICONS_TYPES } from '../utils/constants';
+import getAppIdFromSteamStoreUrl from '../utils/getAppIdFromSteamStoreUrl';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
@@ -10,8 +11,8 @@ function getParentAppId(htmlStr: string) {
 	try {
 		const appId = Number.parseInt(
 			htmlStr
-				.split('<div class=\"blockbg\">')[1]
-				?.split('<a href=\"https://store.steampowered.com/app/')[1]
+				.split('<div class="blockbg">')[1]
+				?.split('<a href="https://store.steampowered.com/app/')[1]
 				?.split('/')[0] ?? '',
 			10
 		);
@@ -67,7 +68,7 @@ async function isAIDisclosed(appId: number) {
 }
 
 async function getStatusForAppAndType(appId: number, type: string): Promise<number> {
-	if (SteamAppListBeforeGpt.includes(appId) && type != 'marketing') {
+	if (SteamAppListBeforeGpt.includes(appId) && type !== 'marketing') {
 		return STATUS_TYPES_HUMAN;
 	}
 
@@ -112,7 +113,7 @@ async function getAppDetails(appId: number): Promise<HTMLElement> {
 	rootElement.append('Sources:', document.createElement('br'));
 
 	for (const source of sourcesList) {
-		if (source.startsWith(window.location.href)) {
+		if (source.startsWith(globalThis.location.href)) {
 			rootElement.append('- Text on the current page');
 		} else if (source.startsWith('http')) {
 			const link = document.createElement('a');
@@ -193,12 +194,8 @@ async function generateBadges(appId: number) {
 	return { aiBadgesList, aiInfoDetails };
 }
 
-function getAppIdFromUrl(url: string) {
-	return Number.parseInt(url.split('/')[4] ?? '', 10);
-}
-
 async function setSteamStorePageBadges() {
-	const appId = getAppIdFromUrl(window.location.href);
+	const appId = getAppIdFromSteamStoreUrl(globalThis.location.href);
 	if (Number.isNaN(appId)) {
 		console.error('[SlopInator] Error: Cannot parse steam appid');
 		return;
@@ -233,7 +230,7 @@ async function setSteamSearchPageBadges(iterationId: number) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
 		}
-		const { aiBadgesList } = (await generateBadges(appId))!;
+		const { aiBadgesList } = await generateBadges(appId);
 		if (subItem?.querySelector('.ai-badges-list')) {
 			continue;
 		}
@@ -255,12 +252,12 @@ async function setSteamSalePageBadges(iterationId: number) {
 			continue;
 		}
 
-		const appId = getAppIdFromUrl(titleLink?.href ?? '');
+		const appId = getAppIdFromSteamStoreUrl(titleLink?.href ?? '');
 		if (Number.isNaN(appId)) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
 		}
-		const { aiBadgesList } = (await generateBadges(appId))!;
+		const { aiBadgesList } = await generateBadges(appId);
 		const root = document.createElement('span');
 		root.appendChild(aiBadgesList);
 		if (parent?.querySelector('.ai-badges-list')) {
@@ -283,12 +280,12 @@ async function setSteamSalePageBadges(iterationId: number) {
 			continue;
 		}
 
-		const appId = getAppIdFromUrl(titleLink?.href ?? '');
+		const appId = getAppIdFromSteamStoreUrl(titleLink?.href ?? '');
 		if (Number.isNaN(appId)) {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
 		}
-		const { aiBadgesList } = (await generateBadges(appId))!;
+		const { aiBadgesList } = await generateBadges(appId);
 		const root = document.createElement('span');
 		root.style = "margin-left: 1rem;"
 		root.appendChild(aiBadgesList);
@@ -303,15 +300,15 @@ async function setSteamSalePageBadges(iterationId: number) {
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/*'],
 	main() {
-		if (window.location.href.startsWith('https://store.steampowered.com/app/')) {
+		if (globalThis.location.href.startsWith('https://store.steampowered.com/app/')) {
 			setSteamStorePageBadges();
 		}
-		if (window.location.href.startsWith('https://store.steampowered.com/search')) {
+		if (globalThis.location.href.startsWith('https://store.steampowered.com/search')) {
 			setInterval(() => {
 				setSteamSearchPageBadges(++steamSearchPageIntervalIterationId);
 			}, 1000);
 		}
-		if (window.location.href.startsWith('https://store.steampowered.com/sale/')) {
+		if (globalThis.location.href.startsWith('https://store.steampowered.com/sale/')) {
 			setInterval(() => {
 				setSteamSalePageBadges(++steamSalePageIntervalIterationId);
 			}, 1000);
