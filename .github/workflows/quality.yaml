@@ -1,0 +1,27 @@
+name: Check code quality
+
+on:
+  - push
+
+env:
+  node-version: 26
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Use Node.js ${{ env.node-version }}
+      uses: actions/setup-node@v7
+      with:
+        node-version: ${{ env.node-version }}
+        cache: 'npm'
+
+    - run: npm ci
+
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@v8.2
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
