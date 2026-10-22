@@ -11,19 +11,25 @@ const metadataQueries: { [key: number]: Promise<void> } = {};
 
 function getParentAppId(htmlStr: string) {
 	try {
-		return parseInt(
+		const appId = parseInt(
 			htmlStr
 				.split('<div class=\"blockbg\">')[1]
-				.split('<a href=\"https://store.steampowered.com/app/')[1]
-				.split('/')[0],
+				?.split('<a href=\"https://store.steampowered.com/app/')[1]
+				?.split('/')[0] ?? '',
 			10
 		);
+
+		if (Number.isNaN(appId)) {
+			return 0;
+		}
+
+		return appId;
 	} catch {
 		return 0;
 	}
 }
 
-function parseStorePage(appId: number, html: string) {
+function parseStorePageHMTMLString(appId: number, html: string) {
 	aiDisclosed[appId] = html.includes('AI Generated Content Disclosure');
 	parentApps[appId] = getParentAppId(html);
 	console.debug(`Found app ${parentApps[appId]} as parent of ${appId}`);
@@ -36,7 +42,7 @@ async function getMetadataFromStorePage(appId: number): Promise<void> {
 				const res = await fetch(`https://store.steampowered.com/app/${appId}/?l=english`);
 				const html = await res.text();
 
-				parseStorePage(appId, html);
+				parseStorePageHMTMLString(appId, html);
 
 				if (parentApps[appId] !== 0 && parentApps[appId] !== appId) {
 					await getMetadataFromStorePage(parentApps[appId]!);
