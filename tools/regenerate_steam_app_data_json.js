@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import { STATUS_TYPES, STATUS_TYPES_UNKNOWN, STEAM_ICONS_TYPES } from './utils/constants.js';
+import { STATUS_TYPES, STATUS_TYPES_UNKNOWN, STEAM_ICONS_TYPES } from '../utils/constants.js';
 
 STEAM_ICONS_TYPES.sort();
 

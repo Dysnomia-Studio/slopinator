@@ -1,3 +1,5 @@
+//// Must be run after "dotnet run GenerateNotUpdatedAppsList.csproj"
+
 import fs from 'node:fs/promises';
 
 const chatGptReleaseDate = new Date("2022-11-30");

@@ -23,7 +23,7 @@ jobs:
           cp ../../entrypoints/steam_app_before_gpt.json .
           dotnet run GenerateNotUpdatedAppsList.csproj
           cd ../..
-          node tools_cli_get_games_before_chatgpt.js
+          node tools/get_games_before_chatgpt.js
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v7

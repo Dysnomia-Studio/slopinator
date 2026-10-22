@@ -15,7 +15,7 @@ jobs:
           node-version: 26
           cache: 'npm'
       - run: |
-          node tools_cli_regenerate_steam_app_data_json.js
+          node tools/regenerate_steam_app_data_json.js
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v7
