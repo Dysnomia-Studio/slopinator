@@ -1,0 +1,15 @@
+{
+    "name": "AION 2",
+    "steamStoreAppId": "3393110",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3393110/AION_2/"
+    ]
+}
