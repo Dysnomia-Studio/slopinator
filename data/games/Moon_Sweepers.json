@@ -1,0 +1,15 @@
+{
+    "name": "Moon Sweepers",
+    "steamStoreAppId": "5335510",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5335510/Moon_Sweepers/"
+    ]
+}
