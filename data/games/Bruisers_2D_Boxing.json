@@ -1,0 +1,15 @@
+{
+    "name": "Bruisers 2D Boxing",
+    "steamStoreAppId": "3740090",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3740090/Bruisers_2D_Boxing/"
+    ]
+}
