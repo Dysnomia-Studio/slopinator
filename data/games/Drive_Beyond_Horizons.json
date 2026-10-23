@@ -1,0 +1,15 @@
+{
+    "name": "Drive Beyond Horizons",
+    "steamStoreAppId": "2625420",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2625420/Drive_Beyond_Horizons/"
+    ]
+}
