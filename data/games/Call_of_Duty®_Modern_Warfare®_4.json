@@ -1,0 +1,15 @@
+{
+    "name": "Call of Duty®: Modern Warfare® 4",
+    "steamStoreAppId": "4435490",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4435490/Call_of_Duty_Modern_Warfare_4/"
+    ]
+}
