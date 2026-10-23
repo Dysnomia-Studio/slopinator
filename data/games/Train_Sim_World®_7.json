@@ -1,0 +1,15 @@
+{
+    "name": "Train Sim World® 7",
+    "steamStoreAppId": "4678800",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4678800/Train_Sim_World_7/"
+    ]
+}
