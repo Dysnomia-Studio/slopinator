@@ -1,0 +1,15 @@
+{
+    "name": "My Summer Car",
+    "steamStoreAppId": "516750",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/516750/My_Summer_Car/"
+    ]
+}
