@@ -43,6 +43,12 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "516750": {
+        "art": 1,
+        "sources": [
+            "https://store.steampowered.com/app/516750/My_Summer_Car/"
+        ]
+    },
     "561740": {
         "art": 0,
         "code": 0,
@@ -85,6 +91,12 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "667970": {
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/667970/VTOL_VR/"
         ]
     },
     "782260": {
@@ -439,6 +451,12 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "2443110": {
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/2443110/South_Scrimshaw_Part_One/"
+        ]
+    },
     "2547400": {
         "art": 0,
         "code": 0,
@@ -772,6 +790,14 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "3300800": {
+        "code": 1,
+        "marketing": 1,
+        "translation": 1,
+        "sources": [
+            "https://store.steampowered.com/app/3300800/HER_TREES_PUZZLE_DREAM/"
+        ]
+    },
     "3333010": {
         "art": 0,
         "code": 0,
@@ -853,6 +879,13 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "3520250": {
+        "art": 1,
+        "marketing": 1,
+        "sources": [
+            "https://store.steampowered.com/app/3520250/MR_DONALD_SAVE_VATICAN/"
         ]
     },
     "3545170": {
@@ -1216,6 +1249,12 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "4630570": {
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/4630570/RUNNING_TRAIN_走ル列車/"
         ]
     },
     "4653580": {
