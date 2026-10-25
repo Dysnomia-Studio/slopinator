@@ -652,6 +652,16 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "2988120": {
+        "art": 1,
+        "sound": 1,
+        "translation": 1,
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/2988120/Never_Be_Alone/",
+            "https://store.steampowered.com/app/3012110/Never_Be_Alone_Demo/"
+        ]
+    },
     "2997030": {
         "art": 0,
         "code": 0,
@@ -689,6 +699,12 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "3061940": {
+        "code": 1,
+        "sources": [
+            "https://shidygames.com/how-i-work-with-ai"
         ]
     },
     "3070020": {
@@ -868,6 +884,12 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "3476670": {
+        "code": 1,
+        "sources": [
+            "https://shidygames.com/how-i-work-with-ai"
         ]
     },
     "3505230": {
@@ -1269,14 +1291,12 @@
         ]
     },
     "4673060": {
-        "art": 0,
-        "code": 0,
-        "marketing": 0,
-        "sound": 0,
-        "translation": 0,
-        "voice": 0,
+        "sound": 1,
+        "translation": 1,
+        "voice": 1,
         "sources": [
-            "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+            "https://store.steampowered.com/app/2366590/Rideshare_Stimulator/",
+            "https://store.steampowered.com/app/5102100/Rideshare_Stimulator_Demo/"
         ]
     },
     "4677740": {
