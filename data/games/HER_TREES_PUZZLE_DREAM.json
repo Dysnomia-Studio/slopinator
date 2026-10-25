@@ -1,0 +1,15 @@
+{
+    "name": "HER TREES : PUZZLE DREAM",
+    "steamStoreAppId": "3300800",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "ai",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3300800/HER_TREES_PUZZLE_DREAM/"
+    ]
+}
