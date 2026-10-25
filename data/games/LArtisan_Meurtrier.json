@@ -1,0 +1,15 @@
+{
+    "name": "L'Artisan Meurtrier",
+    "steamStoreAppId": "3061940",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://shidygames.com/how-i-work-with-ai"
+    ]
+}
