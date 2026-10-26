@@ -328,6 +328,13 @@
             "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/"
         ]
     },
+    "1903340": {
+        "art": 5,
+        "sources": [
+            "https://gusandco.net/2025/12/21/clair-obscur-expedition-33-scandale-ia-disqualification/",
+            "https://www.gamespot.com/articles/clair-obscur-expedition-33-just-lost-its-indie-game-of-the-year-awards-over-ai-concerns/1100-6537129/"
+        ]
+    },
     "1957430": {
         "art": 0,
         "code": 0,
@@ -784,6 +791,12 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "3218230": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3218230/ArcheAge_Chronicles/"
+        ]
+    },
     "3241070": {
         "art": 0,
         "code": 0,
@@ -930,6 +943,12 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "3558670": {
+        "art": 1,
+        "sources": [
+            "https://store.steampowered.com/app/3558670/Tomb_Raider_Legacy_of_Atlantis/"
         ]
     },
     "3564580": {
@@ -1382,6 +1401,16 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "4915700": {
+        "art": 1,
+        "sound": 1,
+        "translation": 1,
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/4915700/Ebbtide/",
+            "https://store.steampowered.com/news/app/4915700/view/716793726963286040"
+        ]
+    },
     "4993140": {
         "art": 0,
         "code": 0,
@@ -1446,6 +1475,13 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "5072600": {
+        "art": 5,
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/5072600/Family_Time/"
         ]
     },
     "5151050": {
