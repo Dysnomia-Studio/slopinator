@@ -1,0 +1,15 @@
+{
+    "name": "Tomb Raider: Legacy of Atlantis",
+    "steamStoreAppId": "3558670",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3558670/Tomb_Raider_Legacy_of_Atlantis/"
+    ]
+}
