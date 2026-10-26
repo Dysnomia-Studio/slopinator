@@ -1,0 +1,16 @@
+{
+    "name": "Ebbtide",
+    "steamStoreAppId": "4915700",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "ai",
+        "translation": "ai",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4915700/Ebbtide/",
+        "https://store.steampowered.com/news/app/4915700/view/716793726963286040"
+    ]
+}
