@@ -1,0 +1,15 @@
+{
+    "name": "Family Time",
+    "steamStoreAppId": "5072600",
+    "aiFlags": {
+        "art": "past",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5072600/Family_Time/"
+    ]
+}
