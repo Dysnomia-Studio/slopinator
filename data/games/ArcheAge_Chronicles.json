@@ -1,0 +1,15 @@
+{
+    "name": "ArcheAge Chronicles",
+    "steamStoreAppId": "3218230",
+    "aiFlags": {
+        "art": "past",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3218230/ArcheAge_Chronicles/"
+    ]
+}
