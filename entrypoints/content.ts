@@ -125,14 +125,9 @@ async function setSteamStorePageBadges() {
 	document.querySelector('.apphub_OtherSiteInfo')?.prepend(aiInfoDetails);
 }
 
-let steamSearchPageIntervalIterationId = 0;
-async function setSteamSearchPageBadges(iterationId: number) {
+async function setSteamSearchResultsBadges() {
 	const list = document.querySelectorAll('#search_resultsRows > a');
 	for (const item of list) {
-		if (iterationId !== steamSearchPageIntervalIterationId) {
-			return;
-		}
-
 		const subItem = item.querySelector('.responsive_search_name_combined');
 		if (subItem?.querySelector('.ai-badges-list')) {
 			continue;
@@ -151,14 +146,9 @@ async function setSteamSearchPageBadges(iterationId: number) {
 	}
 }
 
-let steamSalePageIntervalIterationId = 0;
-async function setSteamSalePageBadges(iterationId: number) {
+async function setSaleSectionContainerBadges() {
 	const largeContainersList = document.querySelectorAll('.SaleSectionContainer.center_row_trgt.ItemCount_1');
 	for (const item of largeContainersList) {
-		if (iterationId !== steamSalePageIntervalIterationId) {
-			return;
-		}
-
 		const titleLink = item.querySelector('a');
 		const parent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
 		if (parent?.querySelector('.ai-badges-list')) {
@@ -178,16 +168,12 @@ async function setSteamSalePageBadges(iterationId: number) {
 		}
 
 		parent?.prepend(root);
-
-		return;
 	}
+}
 
+async function setStoreSaleWidgetOuterContainerBadges() {
 	const thinContainersList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
 	for (const item of thinContainersList) {
-		if (iterationId !== steamSalePageIntervalIterationId) {
-			return;
-		}
-
 		const titleLink = item.querySelector('a');
 		if (titleLink?.parentNode?.querySelector('.ai-badges-list')) {
 			continue;
@@ -210,21 +196,35 @@ async function setSteamSalePageBadges(iterationId: number) {
 	}
 }
 
+const currentlyRunningTasks: { [key: string]: boolean } = {};
+const tasks: { [key: string]: () => Promise<void> } = {
+	'setSteamSearchResultsBadges': setSteamSearchResultsBadges,
+	'setSaleSectionContainerBadges': setSaleSectionContainerBadges,
+	'setStoreSaleWidgetOuterContainerBadges': setStoreSaleWidgetOuterContainerBadges,
+}
+
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/*'],
 	main() {
 		if (globalThis.location.href.startsWith('https://store.steampowered.com/app/')) {
 			setSteamStorePageBadges();
 		}
-		if (globalThis.location.href.startsWith('https://store.steampowered.com/search')) {
-			setInterval(() => {
-				setSteamSearchPageBadges(++steamSearchPageIntervalIterationId);
-			}, 1000);
-		}
-		if (globalThis.location.href.startsWith('https://store.steampowered.com/sale/')) {
-			setInterval(() => {
-				setSteamSalePageBadges(++steamSalePageIntervalIterationId);
-			}, 1000);
-		}
+		setInterval(() => {
+			for (const taskName in tasks) {
+				if (currentlyRunningTasks[taskName]) {
+					continue;
+				}
+
+				(async () => {
+					try {
+						currentlyRunningTasks[taskName] = true;
+						await tasks[taskName]!();
+					} catch (e) {
+						console.error(e);
+					}
+					currentlyRunningTasks[taskName] = false;
+				})();
+			}
+		}, 1000);
 	},
 });
