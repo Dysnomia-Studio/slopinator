@@ -1,0 +1,16 @@
+{
+    "name": "Forbidden Solitaire",
+    "steamStoreAppId": "3414580",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://bsky.app/profile/greyalien.bsky.social/post/3mymhcugrmc2e",
+        "https://store.steampowered.com/app/3414580/Forbidden_Solitaire/"
+    ]
+}
