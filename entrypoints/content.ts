@@ -146,28 +146,40 @@ async function setSteamSearchResultsBadges() {
 	}
 }
 
+async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: ParentNode | null | undefined, additionalStyles?: string) {
+	if (parent?.querySelector('.ai-badges-list')) {
+		return;
+	}
+
+	if (!titleLink?.href || !titleLink?.href.startsWith('https://store.steampowered.com/app/')) {
+		return;
+	}
+
+	const appId = getAppIdFromSteamStoreUrl(titleLink?.href ?? '');
+	if (Number.isNaN(appId)) {
+		console.error('[SlopInator] Error: Cannot parse steam appid', titleLink?.href);
+		return;
+	}
+	const { aiBadgesList } = await generateBadges(appId);
+	if (additionalStyles) {
+		aiBadgesList.style = additionalStyles;
+	}
+	const root = document.createElement('span');
+	root.appendChild(aiBadgesList);
+	if (parent?.querySelector('.ai-badges-list')) {
+		return;
+	}
+
+	parent?.prepend(root);
+}
+
 async function setSaleSectionContainerBadges() {
 	const largeContainersList = document.querySelectorAll('.SaleSectionContainer.center_row_trgt.ItemCount_1');
 	for (const item of largeContainersList) {
 		const titleLink = item.querySelector('a');
 		const parent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
-		if (parent?.querySelector('.ai-badges-list')) {
-			continue;
-		}
 
-		const appId = getAppIdFromSteamStoreUrl(titleLink?.href ?? '');
-		if (Number.isNaN(appId)) {
-			console.error('[SlopInator] Error: Cannot parse steam appid');
-			continue;
-		}
-		const { aiBadgesList } = await generateBadges(appId);
-		const root = document.createElement('span');
-		root.appendChild(aiBadgesList);
-		if (parent?.querySelector('.ai-badges-list')) {
-			continue;
-		}
-
-		parent?.prepend(root);
+		setContainerBadges(titleLink, parent);
 	}
 }
 
@@ -175,24 +187,9 @@ async function setStoreSaleWidgetOuterContainerBadges() {
 	const thinContainersList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
 	for (const item of thinContainersList) {
 		const titleLink = item.querySelector('a');
-		if (titleLink?.parentNode?.querySelector('.ai-badges-list')) {
-			continue;
-		}
+		const parent = titleLink?.parentNode;
 
-		const appId = getAppIdFromSteamStoreUrl(titleLink?.href ?? '');
-		if (Number.isNaN(appId)) {
-			console.error('[SlopInator] Error: Cannot parse steam appid');
-			continue;
-		}
-		const { aiBadgesList } = await generateBadges(appId);
-		const root = document.createElement('span');
-		root.style = "margin-left: 1rem;"
-		root.appendChild(aiBadgesList);
-		if (titleLink?.parentNode?.querySelector('.ai-badges-list')) {
-			continue;
-		}
-
-		titleLink?.parentNode?.append(root);
+		setContainerBadges(titleLink, parent, 'margin-right: 20px');
 	}
 }
 
