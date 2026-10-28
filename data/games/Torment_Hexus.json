@@ -1,0 +1,15 @@
+{
+    "name": "Torment Hexus",
+    "steamStoreAppId": "3238420",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3238420/Torment_Hexus/"
+    ]
+}
