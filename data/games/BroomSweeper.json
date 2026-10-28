@@ -1,0 +1,15 @@
+{
+    "name": "BroomSweeper",
+    "steamStoreAppId": "3473250",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://https://store.steampowered.com/app/3473250/BroomSweeper/"
+    ]
+}
