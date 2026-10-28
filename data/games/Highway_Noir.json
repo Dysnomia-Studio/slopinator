@@ -1,0 +1,15 @@
+{
+    "name": "Highway Noir",
+    "steamStoreAppId": "3317730",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://https://store.steampowered.com/app/3317730/Highway_Noir/"
+    ]
+}
