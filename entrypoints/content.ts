@@ -1,5 +1,6 @@
 import getAppIdFromSteamStoreUrl from '@/utils/getAppIdFromSteamStoreUrl';
 import getStatusForAppAndType from '@/utils/getStatusForAppAndType';
+import type { AnchorHTMLAttributes } from 'react';
 import { STATUS_TYPES, STEAM_ICONS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
@@ -146,7 +147,7 @@ async function setSteamSearchResultsBadges() {
 	}
 }
 
-async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: ParentNode | null | undefined, additionalStyles?: string) {
+async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: ParentNode | null | undefined, prepend: boolean, additionalStyles?: string) {
 	if (parent?.querySelector('.ai-badges-list')) {
 		return;
 	}
@@ -170,7 +171,11 @@ async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: P
 		return;
 	}
 
-	parent?.prepend(root);
+	if (prepend) {
+		parent?.prepend(root);
+	} else {
+		parent?.append(root);
+	}
 }
 
 async function setSaleSectionContainerBadges() {
@@ -179,7 +184,7 @@ async function setSaleSectionContainerBadges() {
 		const titleLink = item.querySelector('a');
 		const parent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
 
-		setContainerBadges(titleLink, parent);
+		setContainerBadges(titleLink, parent, true);
 	}
 }
 
@@ -189,7 +194,17 @@ async function setStoreSaleWidgetOuterContainerBadges() {
 		const titleLink = item.querySelector('a');
 		const parent = titleLink?.parentNode;
 
-		setContainerBadges(titleLink, parent, 'margin-right: 20px');
+		setContainerBadges(titleLink, parent, false, 'margin-left: 15px');
+	}
+}
+
+async function setFrontPageCarouselBadges() {
+	const thinContainersList = document.querySelectorAll('.carousel_items a');
+	for (const item of thinContainersList) {
+		const titleLink = item as HTMLAnchorElement;
+		const parent = titleLink.querySelector('.app_name')?.parentNode;
+
+		setContainerBadges(titleLink, parent, true, 'margin-bottom: 2px');
 	}
 }
 
@@ -198,6 +213,7 @@ const tasks: { [key: string]: () => Promise<void> } = {
 	'setSteamSearchResultsBadges': setSteamSearchResultsBadges,
 	'setSaleSectionContainerBadges': setSaleSectionContainerBadges,
 	'setStoreSaleWidgetOuterContainerBadges': setStoreSaleWidgetOuterContainerBadges,
+	'setFrontPageCarouselBadges': setFrontPageCarouselBadges,
 }
 
 export default defineContentScript({
