@@ -1,0 +1,15 @@
+{
+    "name": "Rosewater",
+    "steamStoreAppId": "1226670",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human"
+    },
+    "sources": [
+        "https://https://store.steampowered.com/app/1226670/Rosewater/"
+    ]
+}
