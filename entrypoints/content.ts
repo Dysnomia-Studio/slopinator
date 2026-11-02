@@ -1,6 +1,5 @@
 import getAppIdFromSteamStoreUrl from '@/utils/getAppIdFromSteamStoreUrl';
 import getStatusForAppAndType from '@/utils/getStatusForAppAndType';
-import type { AnchorHTMLAttributes } from 'react';
 import { STATUS_TYPES, STEAM_ICONS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
