@@ -6,6 +6,7 @@ const int BatchSize = 100;
 const int MaxAttempts = 3;
 
 List<uint> appIds = JsonSerializer.Deserialize<List<uint>>(await File.ReadAllTextAsync("steam_app_before_gpt.json"))!;
+appIds.Sort();
 // TODO: test all public apps as well
 Console.WriteLine($"Found {appIds.Count} app ids.");
 
@@ -33,9 +34,12 @@ await loggedOn.Task;
 Console.WriteLine("Logged on anonymously.");
 
 var lastUpdate = new Dictionary<uint, DateTime>();
-int done = 0;
+List<uint> doneIds = [];
+var totalCount = appIds.Count;
 
-foreach (var batch in appIds.Chunk(BatchSize)) {
+while (appIds.Count != 0) {
+    var batch = appIds.Take(BatchSize).ToList();
+
     try {
         var tokens = await Retry(() => {
             var job = apps.PICSGetAccessTokens(batch, []);
@@ -43,11 +47,9 @@ foreach (var batch in appIds.Chunk(BatchSize)) {
             return job.ToTask();
         });
 
-        var requests = batch
-            .Select(id => new SteamApps.PICSRequest(id) {
-                AccessToken = tokens.AppTokens.TryGetValue(id, out var t) ? t : 0
-            })
-            .ToList();
+        var requests = tokens.AppTokens.Select((x) => new SteamApps.PICSRequest(x.Key) {
+            AccessToken = x.Value
+        });
 
         var info = await Retry(() => {
             var job = apps.PICSGetProductInfo(requests, []);
@@ -57,6 +59,7 @@ foreach (var batch in appIds.Chunk(BatchSize)) {
 
         foreach (var result in info.Results ?? []) {
             foreach (var (id, app) in result.Apps) {
+                doneIds.Add(id);
                 var pub = app.KeyValues["depots"]["branches"]["public"];
                 var raw = pub["timeupdated"].Value;
                 if (raw is null || !long.TryParse(raw, out var unix)) continue; // no default branch / no data
@@ -68,13 +71,12 @@ foreach (var batch in appIds.Chunk(BatchSize)) {
         Console.WriteLine($"Batch starting at {batch[0]} failed: {ex.Message}");
     }
 
-    done += batch.Length;
-    if (done % 10000 == 0 || done == appIds.Count) {
-        Console.WriteLine($"{done}/{appIds.Count} apps processed, {lastUpdate.Count} with a public branch date.");
-        await File.WriteAllTextAsync("lastupdates.json",
-            JsonSerializer.Serialize(lastUpdate, new JsonSerializerOptions { WriteIndented = true })
-        );
-    }
+    appIds = appIds.Where((x) => !doneIds.Contains(x)).Shuffle().ToList();
+
+    Console.WriteLine($"{doneIds.Count}/{totalCount} apps processed, {lastUpdate.Count} with a public branch date, {appIds.Count} remaining.");
+    await File.WriteAllTextAsync("lastupdates.json",
+        JsonSerializer.Serialize(lastUpdate, new JsonSerializerOptions { WriteIndented = true })
+    );
 }
 
 client.Disconnect();
