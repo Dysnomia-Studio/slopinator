@@ -1,0 +1,17 @@
+{
+    "name": "inZOI",
+    "steamStoreAppId": "2456740",
+    "aiFlags": {
+        "art": "ai",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2456740/inZOI/",
+        "https://www.gamesindustry.biz/pubg-and-inzoi-directors-offer-a-glimpse-of-kraftons-ai-first-culture",
+        "https://www.thegamer.com/inzoi-is-facing-more-negative-steam-reviews-than-positive/"
+    ]
+}
