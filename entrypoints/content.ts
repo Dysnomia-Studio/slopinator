@@ -165,16 +165,15 @@ async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: P
 	if (additionalStyles) {
 		aiBadgesList.style = additionalStyles;
 	}
-	const root = document.createElement('span');
-	root.appendChild(aiBadgesList);
+
 	if (parent?.querySelector('.ai-badges-list')) {
 		return;
 	}
 
 	if (prepend) {
-		parent?.prepend(root);
+		parent?.prepend(aiBadgesList);
 	} else {
-		parent?.append(root);
+		parent?.append(aiBadgesList);
 	}
 }
 
@@ -189,8 +188,8 @@ async function setSaleSectionContainerBadges() {
 }
 
 async function setStoreSaleWidgetOuterContainerBadges() {
-	const thinContainersList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
-	for (const item of thinContainersList) {
+	const itemsList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
+	for (const item of itemsList) {
 		const titleLink = item.querySelector('a');
 		const parent = titleLink?.parentNode;
 
@@ -199,12 +198,23 @@ async function setStoreSaleWidgetOuterContainerBadges() {
 }
 
 async function setFrontPageCarouselBadges() {
-	const thinContainersList = document.querySelectorAll('.carousel_items a');
-	for (const item of thinContainersList) {
+	const itemsList = document.querySelectorAll('.carousel_items a');
+	for (const item of itemsList) {
 		const titleLink = item as HTMLAnchorElement;
 		const parent = titleLink.querySelector('.app_name')?.parentNode;
 
 		setContainerBadges(titleLink, parent, true, 'display: inline-block; margin-bottom: 5px');
+	}
+}
+
+// Daily deals, personal calendar, ...
+async function setPageCarouselBadges() {
+	const itemsList = document.querySelectorAll('.carousel__slide .Panel.Focusable a');
+	for (const item of itemsList) {
+		const titleLink = item as HTMLAnchorElement;
+		const parent = item;
+
+		setContainerBadges(titleLink, parent, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
 	}
 }
 
@@ -214,6 +224,7 @@ const tasks: { [key: string]: () => Promise<void> } = {
 	'setSaleSectionContainerBadges': setSaleSectionContainerBadges,
 	'setStoreSaleWidgetOuterContainerBadges': setStoreSaleWidgetOuterContainerBadges,
 	'setFrontPageCarouselBadges': setFrontPageCarouselBadges,
+	'setPageCarouselBadges': setPageCarouselBadges,
 }
 
 export default defineContentScript({
