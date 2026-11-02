@@ -4,7 +4,7 @@
     "aiFlags": {
         "art": "human",
         "code": "human",
-        "marketing": "unknown",
+        "marketing": "human",
         "sound": "human",
         "translation": "human",
         "voice": "disabled"
