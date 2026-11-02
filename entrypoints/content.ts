@@ -218,6 +218,20 @@ async function setPageCarouselBadges() {
 	}
 }
 
+async function setPersonalCalendarPageBadges() {
+	if (!globalThis.location.href.startsWith('https://store.steampowered.com/personalcalendar')) {
+		return;
+	}
+
+	const itemsList = document.querySelectorAll('.Panel .Panel .ImpressionTrackedElement div[role="button"]');
+	for (const item of itemsList) {
+		const titleLink = item.querySelector('a');
+		const parent = item;
+
+		setContainerBadges(titleLink, parent, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
+	}
+}
+
 const currentlyRunningTasks: { [key: string]: boolean } = {};
 const tasks: { [key: string]: () => Promise<void> } = {
 	'setSteamSearchResultsBadges': setSteamSearchResultsBadges,
@@ -225,6 +239,7 @@ const tasks: { [key: string]: () => Promise<void> } = {
 	'setStoreSaleWidgetOuterContainerBadges': setStoreSaleWidgetOuterContainerBadges,
 	'setFrontPageCarouselBadges': setFrontPageCarouselBadges,
 	'setPageCarouselBadges': setPageCarouselBadges,
+	'setPersonalCalendarPageBadges': setPersonalCalendarPageBadges,
 }
 
 export default defineContentScript({
