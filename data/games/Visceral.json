@@ -1,0 +1,15 @@
+{
+    "name": "Visceral",
+    "steamStoreAppId": "5301770",
+    "aiFlags": {
+        "art": "ai",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5301770/Visceral/"
+    ]
+}
