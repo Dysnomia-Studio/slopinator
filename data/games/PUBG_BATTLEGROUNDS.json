@@ -1,0 +1,16 @@
+{
+    "name": "PUBG: BATTLEGROUNDS",
+    "steamStoreAppId": "578080",
+    "aiFlags": {
+        "art": "ai",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS",
+        "https://www.gamesindustry.biz/pubg-and-inzoi-directors-offer-a-glimpse-of-kraftons-ai-first-culture"
+    ]
+}
