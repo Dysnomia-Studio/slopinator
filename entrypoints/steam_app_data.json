@@ -60,6 +60,14 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "578080": {
+        "art": 1,
+        "code": 1,
+        "sources": [
+            "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS",
+            "https://www.gamesindustry.biz/pubg-and-inzoi-directors-offer-a-glimpse-of-kraftons-ai-first-culture"
+        ]
+    },
     "602430": {
         "art": 0,
         "code": 0,
@@ -495,6 +503,17 @@
         "voice": 1,
         "sources": [
             "https://store.steampowered.com/app/2443110/South_Scrimshaw_Part_One/"
+        ]
+    },
+    "2456740": {
+        "art": 1,
+        "code": 1,
+        "translation": 1,
+        "voice": 1,
+        "sources": [
+            "https://store.steampowered.com/app/2456740/inZOI/",
+            "https://www.gamesindustry.biz/pubg-and-inzoi-directors-offer-a-glimpse-of-kraftons-ai-first-culture",
+            "https://www.thegamer.com/inzoi-is-facing-more-negative-steam-reviews-than-positive/"
         ]
     },
     "2547400": {
@@ -1602,6 +1621,13 @@
         "voice": 0,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "5301770": {
+        "art": 1,
+        "code": 1,
+        "sources": [
+            "https://store.steampowered.com/app/5301770/Visceral/"
         ]
     },
     "5335510": {
