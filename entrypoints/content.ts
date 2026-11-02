@@ -87,7 +87,7 @@ async function generateBadges(appId: number) {
 	const aiInfoDetails = await getAppDetails(appId);
 
 	function updateAIInfoSourcesVisibility() {
-		let style = 'position: absolute;top: 35px;z-index: 10000;background: #3b4046;padding: 0.5rem;width: calc(100% - 1rem);display: ';
+		let style = 'position: absolute; top: 35px; z-index: 10000; background: rgb(59, 64, 70); padding: 0.5rem; width: calc(100% - 1rem); text-overflow: ellipsis; overflow: hidden;';
 		if (sourcesVisible) {
 			style += 'initial;';
 		} else {
