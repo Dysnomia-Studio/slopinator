@@ -204,7 +204,7 @@ async function setFrontPageCarouselBadges() {
 		const titleLink = item as HTMLAnchorElement;
 		const parent = titleLink.querySelector('.app_name')?.parentNode;
 
-		setContainerBadges(titleLink, parent, true, 'margin-bottom: 2px');
+		setContainerBadges(titleLink, parent, true, 'display: inline-block; margin-bottom: 5px');
 	}
 }
 
