@@ -1,8 +1,31 @@
+import type { AppGreyingConfig } from '@/utils/AppGreyingConfigType';
 import getAppIdFromSteamStoreUrl from '@/utils/getAppIdFromSteamStoreUrl';
 import getStatusForAppAndType from '@/utils/getStatusForAppAndType';
+import { appsGreyingConfig } from '@/utils/storage';
 import { STATUS_TYPES, STEAM_ICONS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
+
+let config: AppGreyingConfig | null = null;
+async function greyOutIfNeeded(element: HTMLElement, appId: number) {
+	if (!config) {
+		config = await appsGreyingConfig.getValue();
+	}
+
+	for (const iconType of STEAM_ICONS_TYPES) {
+		const statusIndex = await getStatusForAppAndType(appId, iconType);
+		const status = STATUS_TYPES[statusIndex]!;
+
+		if (config[iconType]?.[status]) {
+			element.style.opacity = '0.1';
+			return;
+		}
+	}
+}
+
+async function updateGreyingConfig() {
+	config = await appsGreyingConfig.getValue();
+}
 
 async function getAppDetails(appId: number): Promise<HTMLElement> {
 	const sourcesList = [...(SteamAppData[appId]?.sources as string[] ?? [])];;
@@ -107,6 +130,9 @@ async function generateBadges(appId: number) {
 	return { aiBadgesList, aiInfoDetails };
 }
 
+/**
+ * Various pages/items types where to generate badges:
+ **/
 async function setSteamStorePageBadges() {
 	const appId = getAppIdFromSteamStoreUrl(globalThis.location.href);
 	if (Number.isNaN(appId)) {
@@ -129,7 +155,7 @@ async function setSteamSearchResultsBadges() {
 	const list = document.querySelectorAll('#search_resultsRows > a');
 	for (const item of list) {
 		const subItem = item.querySelector('.responsive_search_name_combined');
-		if (subItem?.querySelector('.ai-badges-list')) {
+		if (!subItem || subItem?.querySelector('.ai-badges-list')) {
 			continue;
 		}
 
@@ -138,16 +164,19 @@ async function setSteamSearchResultsBadges() {
 			console.error('[SlopInator] Error: Cannot parse steam appid');
 			continue;
 		}
+
+		await greyOutIfNeeded(item as HTMLElement, appId);
+
 		const { aiBadgesList } = await generateBadges(appId);
-		if (subItem?.querySelector('.ai-badges-list')) {
+		if (subItem.querySelector('.ai-badges-list')) {
 			continue;
 		}
-		subItem?.append(aiBadgesList);
+		subItem.append(aiBadgesList);
 	}
 }
 
-async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: ParentNode | null | undefined, prepend: boolean, additionalStyles?: string) {
-	if (parent?.querySelector('.ai-badges-list')) {
+async function setContainerBadges(titleLink: HTMLAnchorElement | null, aiBadgesListParent: ParentNode | null | undefined, parent: HTMLElement, prepend: boolean, additionalStyles?: string) {
+	if (!aiBadgesListParent || aiBadgesListParent?.querySelector('.ai-badges-list')) {
 		return;
 	}
 
@@ -165,24 +194,26 @@ async function setContainerBadges(titleLink: HTMLAnchorElement | null, parent: P
 		aiBadgesList.style = additionalStyles;
 	}
 
-	if (parent?.querySelector('.ai-badges-list')) {
+	if (aiBadgesListParent.querySelector('.ai-badges-list')) {
 		return;
 	}
 
 	if (prepend) {
-		parent?.prepend(aiBadgesList);
+		aiBadgesListParent.prepend(aiBadgesList);
 	} else {
-		parent?.append(aiBadgesList);
+		aiBadgesListParent.append(aiBadgesList);
 	}
+
+	await greyOutIfNeeded(parent, appId);
 }
 
 async function setSaleSectionContainerBadges() {
 	const largeContainersList = document.querySelectorAll('.SaleSectionContainer.center_row_trgt.ItemCount_1');
 	for (const item of largeContainersList) {
 		const titleLink = item.querySelector('a');
-		const parent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
+		const badgesListParent = item.querySelector('.StoreSaleWidgetShortDesc')?.parentNode;
 
-		setContainerBadges(titleLink, parent, true);
+		setContainerBadges(titleLink, badgesListParent, item as HTMLElement, true);
 	}
 }
 
@@ -190,9 +221,9 @@ async function setStoreSaleWidgetOuterContainerBadges() {
 	const itemsList = document.querySelectorAll('.StoreSaleWidgetOuterContainer div div div:nth-child(2)');
 	for (const item of itemsList) {
 		const titleLink = item.querySelector('a');
-		const parent = titleLink?.parentNode;
+		const badgesListParent = titleLink?.parentNode;
 
-		setContainerBadges(titleLink, parent, false, 'margin-left: 15px');
+		setContainerBadges(titleLink, badgesListParent, item as HTMLElement, false, 'margin-left: 15px');
 	}
 }
 
@@ -200,9 +231,9 @@ async function setFrontPageCarouselBadges() {
 	const itemsList = document.querySelectorAll('.carousel_items a');
 	for (const item of itemsList) {
 		const titleLink = item as HTMLAnchorElement;
-		const parent = titleLink.querySelector('.app_name')?.parentNode;
+		const badgesListParent = titleLink.querySelector('.app_name')?.parentNode;
 
-		setContainerBadges(titleLink, parent, true, 'display: inline-block; margin-bottom: 5px');
+		setContainerBadges(titleLink, badgesListParent, item.querySelector('.capsule') as HTMLElement, true, 'display: inline-block; margin-bottom: 5px');
 	}
 }
 
@@ -213,7 +244,7 @@ async function setPageCarouselBadges() {
 		const titleLink = item as HTMLAnchorElement;
 		const parent = item;
 
-		setContainerBadges(titleLink, parent, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
+		setContainerBadges(titleLink, parent, item as HTMLElement, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
 	}
 }
 
@@ -227,7 +258,7 @@ async function setPersonalCalendarPageBadges() {
 		const titleLink = item.querySelector('a');
 		const parent = item;
 
-		setContainerBadges(titleLink, parent, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
+		setContainerBadges(titleLink, parent, item as HTMLElement, true, 'background: #000000CC; display: inline-block; padding: 5px; position: absolute; right: 0; top: 0; z-index: 1000;');
 	}
 }
 
@@ -244,6 +275,8 @@ const tasks: { [key: string]: () => Promise<void> } = {
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/*'],
 	main() {
+		updateGreyingConfig();
+
 		if (globalThis.location.href.startsWith('https://store.steampowered.com/app/')) {
 			setSteamStorePageBadges();
 		}
