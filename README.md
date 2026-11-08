@@ -13,8 +13,16 @@ This will be shown like that:
 
 # Installation
 
-Chrome web store: https://chromewebstore.google.com/detail/slop-inator/hgflafbjgbapndncdllnmkefinafckoj  
-Firefox addon store: https://addons.mozilla.org/fr/firefox/addon/slop-inator/  
+**Chrome web store (Chrome/Opera):** https://chromewebstore.google.com/detail/slop-inator/hgflafbjgbapndncdllnmkefinafckoj  
+**Firefox addon store:** https://addons.mozilla.org/fr/firefox/addon/slop-inator/  
+**On the Steam client:**
+- Open the steam client, and go to the store
+- Right click on any link then "Open link in new tab"
+- Paste the extension url in the URI bar: https://chromewebstore.google.com/detail/slop-inator/hgflafbjgbapndncdllnmkefinafckoj
+- Click "Add to Chrome"
+- Click "Save" (it won't save it anywhere, but it works)
+- Reload the steam client store page
+- Enjoy!
 
 Pre-release versions are also available in the "Releases" tab.  
 
