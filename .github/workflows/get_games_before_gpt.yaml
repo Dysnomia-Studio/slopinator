@@ -20,7 +20,6 @@ jobs:
           cache: 'npm'
       - run: |
           cd tools/GenerateNotUpdatedAppsList/
-          cp ../../entrypoints/steam_app_before_gpt.json .
           dotnet run GenerateNotUpdatedAppsList.csproj
           cd ../..
           node tools/get_games_before_chatgpt.js
@@ -29,4 +28,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update steam_app_before_gpt.json"
-          file_pattern: entrypoints/steam_app_before_gpt.json
+          file_pattern: 'entrypoints/steam_app_before_gpt.json tools/GenerateNotUpdatedAppsList/lastupdates.json'

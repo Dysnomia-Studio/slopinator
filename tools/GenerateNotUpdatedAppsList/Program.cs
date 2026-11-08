@@ -6,8 +6,7 @@ const int BatchSize = 100;
 const int MaxAttempts = 3;
 
 List<uint> appIds = JsonSerializer.Deserialize<List<uint>>(await File.ReadAllTextAsync("steam_app_before_gpt.json"))!;
-appIds.Sort();
-// TODO: test all public apps as well
+appIds = appIds.ToList();
 Console.WriteLine($"Found {appIds.Count} app ids.");
 
 var client = new SteamClient();
@@ -33,13 +32,10 @@ _ = Task.Run(() => { while (running) manager.RunWaitCallbacks(TimeSpan.FromSecon
 await loggedOn.Task;
 Console.WriteLine("Logged on anonymously.");
 
-var lastUpdate = new Dictionary<uint, DateTime>();
-List<uint> doneIds = [];
-var totalCount = appIds.Count;
+var lastUpdate = JsonSerializer.Deserialize<Dictionary<uint, DateTime>>(await File.ReadAllTextAsync("lastupdates.json"))!;
+int done = 0;
 
-while (appIds.Count != 0) {
-    var batch = appIds.Take(BatchSize).ToList();
-
+foreach (var batch in appIds.Chunk(BatchSize)) {
     try {
         var tokens = await Retry(() => {
             var job = apps.PICSGetAccessTokens(batch, []);
@@ -59,11 +55,13 @@ while (appIds.Count != 0) {
 
         foreach (var result in info.Results ?? []) {
             foreach (var (id, app) in result.Apps) {
-                doneIds.Add(id);
-                var pub = app.KeyValues["depots"]["branches"]["public"];
-                var raw = pub["timeupdated"].Value;
-                if (raw is null || !long.TryParse(raw, out var unix)) continue; // no default branch / no data
+                done++;
 
+                var pub = app.KeyValues["depots"]["branches"]["public"];
+                var raw = pub["timeupdated"].Value ?? pub["timebuildupdated"].Value;
+                if (raw is null || !long.TryParse(raw, out var unix)) {
+                    continue;
+                }
                 lastUpdate[id] = DateTimeOffset.FromUnixTimeSeconds(unix).UtcDateTime;
             }
         }
@@ -71,12 +69,9 @@ while (appIds.Count != 0) {
         Console.WriteLine($"Batch starting at {batch[0]} failed: {ex.Message}");
     }
 
-    appIds = appIds.Where((x) => !doneIds.Contains(x)).Shuffle().ToList();
+    Console.WriteLine($"{done} data queried, {lastUpdate.Count} with a public branch date, {appIds.Count - done} remaining.");
 
-    Console.WriteLine($"{doneIds.Count}/{totalCount} apps processed, {lastUpdate.Count} with a public branch date, {appIds.Count} remaining.");
-    await File.WriteAllTextAsync("lastupdates.json",
-        JsonSerializer.Serialize(lastUpdate, new JsonSerializerOptions { WriteIndented = true })
-    );
+    await Task.Delay(1000);
 }
 
 client.Disconnect();
