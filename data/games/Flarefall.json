@@ -1,0 +1,16 @@
+{
+    "name": "Flarefall",
+    "steamStoreAppId": "5518060",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5518060/Flarefall/"
+    ]
+}
