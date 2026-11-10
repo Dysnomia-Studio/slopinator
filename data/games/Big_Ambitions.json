@@ -1,0 +1,16 @@
+{
+    "name": "Big Ambitions",
+    "steamStoreAppId": "1331550",
+    "aiFlags": {
+        "art": "human",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1331550/Big_Ambitions/"
+    ]
+}
