@@ -1,0 +1,16 @@
+{
+    "name": "Ashes of the Singularity II",
+    "steamStoreAppId": "3499790",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3499790/Ashes_of_the_Singularity_II/"
+    ]
+}
