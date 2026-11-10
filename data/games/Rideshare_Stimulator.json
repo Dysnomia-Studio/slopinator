@@ -7,7 +7,8 @@
         "marketing": "unknown",
         "sound": "ai",
         "translation": "ai",
-        "voice": "ai"
+        "voice": "ai",
+        "writing": "unknown"
     },
     "sources": [
         "https://store.steampowered.com/app/2366590/Rideshare_Stimulator/",

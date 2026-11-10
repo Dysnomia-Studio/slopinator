@@ -7,7 +7,8 @@
         "marketing": "human",
         "sound": "human",
         "translation": "human",
-        "voice": "human"
+        "voice": "human",
+        "writing": "human"
     },
     "sources": [
         "https://https://store.steampowered.com/app/3317730/Highway_Noir/"

@@ -7,7 +7,8 @@
         "marketing": "ai",
         "sound": "unknown",
         "translation": "ai",
-        "voice": "unknown"
+        "voice": "unknown",
+        "writing": "unknown"
     },
     "sources": [
         "https://store.steampowered.com/app/3300800/HER_TREES_PUZZLE_DREAM/"

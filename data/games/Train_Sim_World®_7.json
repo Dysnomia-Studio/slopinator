@@ -7,7 +7,8 @@
         "marketing": "unknown",
         "sound": "unknown",
         "translation": "unknown",
-        "voice": "ai"
+        "voice": "ai",
+        "writing": "unknown"
     },
     "sources": [
         "https://store.steampowered.com/app/4678800/Train_Sim_World_7/"

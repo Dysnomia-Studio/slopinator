@@ -7,7 +7,8 @@
         "marketing": "human",
         "sound": "human",
         "translation": "human",
-        "voice": "disabled"
+        "voice": "disabled",
+        "writing": "human"
     },
     "sources": [
         "Slop-Inator developer created this game!"

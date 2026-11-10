@@ -7,7 +7,8 @@
         "marketing": "human",
         "sound": "human",
         "translation": "human",
-        "voice": "human"
+        "voice": "human",
+        "writing": "human"
     },
     "sources": [
         "https://bsky.app/profile/greyalien.bsky.social/post/3mymhcugrmc2e",
