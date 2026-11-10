@@ -1,0 +1,16 @@
+{
+    "name": "Silica",
+    "steamStoreAppId": "1494420",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1494420/Silica/"
+    ]
+}
