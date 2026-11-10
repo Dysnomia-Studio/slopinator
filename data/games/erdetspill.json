@@ -1,0 +1,16 @@
+{
+    "name": "erdetspill",
+    "steamStoreAppId": "4887360",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4887360/erdetspill/"
+    ]
+}
