@@ -97,7 +97,7 @@ async function generateBadges(appId: number) {
 		const img = document.createElement('img');
 		img.src = browser.runtime.getURL(getStatusImg(iconType, status));
 			
-		let style = 'max-height: 23px; vertical-align: middle;';
+		let style = 'max-height: 21px; vertical-align: middle;';
 		if (aiBadgesList.children.length > 0) {
 			style += ' margin-left: 7px;'; 
 		}
