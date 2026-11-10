@@ -255,6 +255,13 @@
             "https://store.steampowered.com/app/1331550/Big_Ambitions/"
         ]
     },
+    "1357210": {
+        "art": 5,
+        "translation": 5,
+        "sources": [
+            "SOURCE"
+        ]
+    },
     "1404850": {
         "art": 1,
         "code": 1,
@@ -273,6 +280,13 @@
             "https://aftermath.site/big-walk-ai-igf-jurors-controversy/"
         ]
     },
+    "1494420": {
+        "translation": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1494420/Silica/"
+        ]
+    },
     "1562400": {
         "art": 1,
         "code": 1,
@@ -283,6 +297,13 @@
         "writing": 1,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "1575940": {
+        "art": 5,
+        "translation": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1575940/Sins_of_a_Solar_Empire_II/"
         ]
     },
     "1586260": {
@@ -959,6 +980,12 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "3274580": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3274580/Anno_117_Pax_Romana/"
+        ]
+    },
     "3285550": {
         "art": 1,
         "code": 1,
@@ -1104,6 +1131,19 @@
         "code": 5,
         "sources": [
             "https://shidygames.com/how-i-work-with-ai"
+        ]
+    },
+    "3499520": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3499520/Piano_Glow/"
+        ]
+    },
+    "3499790": {
+        "art": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3499790/Ashes_of_the_Singularity_II/"
         ]
     },
     "3505230": {
@@ -1414,6 +1454,13 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "4080220": {
+        "art": 5,
+        "marketing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/4080220/EA_SPORTS_FC_27/"
+        ]
+    },
     "4094890": {
         "art": 1,
         "code": 1,
@@ -1657,6 +1704,12 @@
             "https://store.steampowered.com/app/4887360/erdetspill/"
         ]
     },
+    "4901540": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/4901540/Brick_Buddies/"
+        ]
+    },
     "4915700": {
         "art": 5,
         "sound": 5,
@@ -1802,6 +1855,13 @@
         "translation": 5,
         "sources": [
             "https://store.steampowered.com/app/5335510/Moon_Sweepers/"
+        ]
+    },
+    "5518060": {
+        "marketing": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5518060/Flarefall/"
         ]
     }
 }
