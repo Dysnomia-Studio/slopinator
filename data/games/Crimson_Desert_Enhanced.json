@@ -1,0 +1,16 @@
+{
+    "name": "Crimson Desert Enhanced",
+    "steamStoreAppId": "3321460",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3321460/Crimson_Desert_Enhanced/"
+    ]
+}
