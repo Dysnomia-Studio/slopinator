@@ -1,0 +1,16 @@
+{
+    "name": "Sins of a Solar Empire II",
+    "steamStoreAppId": "1575940",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1575940/Sins_of_a_Solar_Empire_II/"
+    ]
+}
