@@ -1,0 +1,16 @@
+{
+    "name": "EA SPORTS FC™ 27",
+    "steamStoreAppId": "4080220",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4080220/EA_SPORTS_FC_27/"
+    ]
+}
