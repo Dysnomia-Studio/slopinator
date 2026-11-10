@@ -1,0 +1,16 @@
+{
+    "name": "Librarian: Tidy Up the Arcane Library!",
+    "steamStoreAppId": "4197610",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4197610/Librarian_Tidy_Up_the_Arcane_Library/"
+    ]
+}
