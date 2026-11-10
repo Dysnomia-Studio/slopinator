@@ -1,0 +1,16 @@
+{
+    "name": "Sephiria",
+    "steamStoreAppId": "2436940",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2436940/Sephiria/"
+    ]
+}
