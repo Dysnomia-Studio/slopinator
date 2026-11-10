@@ -1,0 +1,16 @@
+{
+    "name": "Piano Glow",
+    "steamStoreAppId": "3499520",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3499520/Piano_Glow/"
+    ]
+}
