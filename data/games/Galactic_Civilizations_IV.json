@@ -1,0 +1,16 @@
+{
+    "name": "Galactic Civilizations IV",
+    "steamStoreAppId": "1357210",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "SOURCE"
+    ]
+}
