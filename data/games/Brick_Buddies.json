@@ -1,0 +1,16 @@
+{
+    "name": "Brick Buddies",
+    "steamStoreAppId": "4901540",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4901540/Brick_Buddies/"
+    ]
+}
