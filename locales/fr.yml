@@ -1,0 +1,28 @@
+extension:
+  name: 'Slop-Inator'
+  description: "Affiche des badges représentant l'utilisation de l'IA générative dans les applications, en particulier dans les jeux Steam."
+badges:
+  section_title: 'Badges :'
+  code: 'Code'
+  art: 'Art et contenus visuels'
+  translation: 'Traductions'
+  marketing: 'Marketing'
+  sound: 'Sons/Musique'
+  voice: 'Voix'
+  writing: Écriture
+sources:
+  section_title: 'Sources :'
+  current_page: 'Contenu de la page actuelle (texte, images, ...)'
+  pre_gpt: "Ce jeu n'a pas été mis à jour depuis la sortie de ChatGPT ou de tout autre grand modèle de langage (LLM) public (30/11/2022)."
+  contribute_msg: "Les données sont incorrectes ou incomplètes ? Vous pouvez contribuer aux données de l'extension ici !"
+status:
+  disabled: 'Aucun contenu correspondant à ce badge dans le jeu'
+  human: "Créé uniquement par des humains, aucune utilisation de l'IA"
+  unknown: "Utilisation de l'IA inconnue"
+  warning: "Utilisation possible de l'IA, vérifiez la « Notification de contenu généré par IA »"
+  past: 'Contenu assisté par IA ou généré par IA présent dans le passé, mais entièrement remplacé par du contenu créé par des humains'
+  ai: 'Contenu assisté par IA ou généré par IA'
+popup:
+  contribute_msg: 'Contribuez à la base de données ici :)'
+  greying_title: 'Griser les applications suivantes :'
+  badges_status_details: "Plus d'infos sur les statuts badges :"
