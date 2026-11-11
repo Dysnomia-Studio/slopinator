@@ -1,4 +1,5 @@
 import type { AppGreyingConfig } from '@/utils/AppGreyingConfigType';
+import { GENAI_BADGES } from '@/utils/constants';
 import { appsGreyingConfig } from '@/utils/storage';
 import type { ChangeEvent } from 'react';
 import './App.css';
@@ -33,8 +34,8 @@ function AppFilterTable() {
 	}
 
 	const lines = [];
-	for (const icon of STEAM_ICONS_TYPES) {
-		const columns = [<td key={icon + '-first'}>{icon}</td>];
+	for (const icon of GENAI_BADGES) {
+		const columns = [<td key={icon + '-first'}>{i18n.t('badges.' + icon)}</td>];
 		for (const status of STATUS_TYPES) {
 			columns.push(
 				<td key={icon + '-' + status}>
@@ -50,10 +51,17 @@ function AppFilterTable() {
 	}
 
 	return (
-		<table>
-			<thead><tr>{...columnsTh}</tr></thead>
-			<tbody>{...lines}</tbody>
-		</table>
+		<>
+			<table>
+				<thead><tr>{...columnsTh}</tr></thead>
+				<tbody>{...lines}</tbody>
+			</table>
+
+			<div id="popup-table-captions">
+				<h2>{i18n.t('popup.badges_status_details')}</h2>
+				{STATUS_TYPES.map((status) => <p><b>{status}</b>: {i18n.t('status.' + status)}</p>)}
+			</div>
+		</>
 	);
 }
 
@@ -62,9 +70,9 @@ function App() {
 		<>
 			<h1>Behold! The Slop-Inator!</h1>
 			<img src="/doof-pic.png" alt="Behold! The Slop-Inator!" />
-			<h2><a href="https://github.com/Dysnomia-Studio/slopinator#contribution" target='_blank'>Contribute to the database here :)</a></h2>
+			<h2><a href="https://github.com/Dysnomia-Studio/slopinator#contribution" target='_blank'>{i18n.t('popup.contribute_msg')}</a></h2>
 			<hr />
-			<h2>Grey out the following apps:</h2>
+			<h2>{i18n.t('popup.greying_title')}</h2>
 			<AppFilterTable />
 		</>
 	);

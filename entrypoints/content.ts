@@ -2,7 +2,7 @@ import type { AppGreyingConfig } from '@/utils/AppGreyingConfigType';
 import getAppIdFromSteamStoreUrl from '@/utils/getAppIdFromSteamStoreUrl';
 import getStatusForAppAndType from '@/utils/getStatusForAppAndType';
 import { appsGreyingConfig } from '@/utils/storage';
-import { STATUS_TYPES, STEAM_ICONS_TYPES } from '../utils/constants';
+import { GENAI_BADGES, STATUS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
@@ -12,7 +12,7 @@ async function greyOutIfNeeded(element: HTMLElement, appId: number) {
 		config = await appsGreyingConfig.getValue();
 	}
 
-	for (const iconType of STEAM_ICONS_TYPES) {
+	for (const iconType of GENAI_BADGES) {
 		const statusIndex = await getStatusForAppAndType(appId, iconType);
 		const status = STATUS_TYPES[statusIndex]!;
 
@@ -30,7 +30,7 @@ async function updateGreyingConfig() {
 async function getAppDetails(appId: number): Promise<HTMLElement> {
 	const sourcesList = [...(SteamAppData[appId]?.sources as string[] ?? [])];;
 	if (SteamAppListBeforeGpt.includes(appId)) {
-		sourcesList.push('This game hasn\'t been updated since ChatGPT or any public big LLM released (2022-11-30).');
+		sourcesList.push(i18n.t('sources.pre_gpt'));
 	}
 
 	if (sourcesList.length === 0) {
@@ -39,18 +39,18 @@ async function getAppDetails(appId: number): Promise<HTMLElement> {
 
 	const rootElement = document.createElement('div');
 
-	rootElement.append('Badges:', document.createElement('br'));
-	for (const iconType of STEAM_ICONS_TYPES) {
+	rootElement.append(i18n.t('badges.section_title'), document.createElement('br'));
+	for (const iconType of GENAI_BADGES) {
 		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
-		rootElement.append('- ', iconType, ': ', status, document.createElement('br'));
+		rootElement.append('- ', i18n.t('badges.' + iconType), ': ', i18n.t('status.' + status), document.createElement('br'));
 	}
 
 	rootElement.append(document.createElement('br'));
-	rootElement.append('Sources:', document.createElement('br'));
+	rootElement.append(i18n.t('sources.section_title'), document.createElement('br'));
 
 	for (const source of sourcesList) {
 		if (source.startsWith(globalThis.location.href)) {
-			rootElement.append('- Text on the current page');
+			rootElement.append('- ' + i18n.t('sources.current_page'));
 		} else if (source.startsWith('http')) {
 			const link = document.createElement('a');
 			link.href = source;
@@ -67,7 +67,7 @@ async function getAppDetails(appId: number): Promise<HTMLElement> {
 	const contributeLink = document.createElement('a');
 	contributeLink.href = 'https://github.com/Dysnomia-Studio/slopinator#contribution';
 	contributeLink.target = '_blank';
-	contributeLink.textContent = 'Incorrect or incomplete data? You can contribute to the extension data here!';
+	contributeLink.textContent = i18n.t('sources.contribute_msg');
 
 	rootElement.append(
 		document.createElement('br'),
@@ -91,7 +91,7 @@ async function generateBadges(appId: number) {
 	const aiBadgesList = document.createElement('span');
 	aiBadgesList.classList.add('ai-badges-list');
 
-	for (const iconType of STEAM_ICONS_TYPES) {
+	for (const iconType of GENAI_BADGES) {
 		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
 
 		const img = document.createElement('img');

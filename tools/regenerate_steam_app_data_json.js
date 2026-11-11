@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
-import { STATUS_TYPES, STATUS_TYPES_UNKNOWN, STEAM_ICONS_TYPES } from '../utils/constants.js';
+import { GENAI_BADGES, STATUS_TYPES, STATUS_TYPES_UNKNOWN } from '../utils/constants.js';
 
-STEAM_ICONS_TYPES.sort((a, b) => a.localeCompare(b));
+GENAI_BADGES.sort((a, b) => a.localeCompare(b));
 
 const GAMES_FOLDER = 'data/games/'
 const files = await fs.readdir(GAMES_FOLDER);
@@ -17,7 +17,7 @@ for (const file of files) {
 
 	output[obj.steamStoreAppId] = {};
 
-	for (const iconType of STEAM_ICONS_TYPES) {
+	for (const iconType of GENAI_BADGES) {
 		const status = STATUS_TYPES.indexOf(obj.aiFlags[iconType]);
 		if (status === STATUS_TYPES_UNKNOWN) {
 			continue;
