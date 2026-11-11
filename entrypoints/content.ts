@@ -42,7 +42,9 @@ async function getAppDetails(appId: number): Promise<HTMLElement> {
 	rootElement.append(i18n.t('badges.section_title'), document.createElement('br'));
 	for (const iconType of GENAI_BADGES) {
 		const status: string = STATUS_TYPES[await getStatusForAppAndType(appId, iconType)]!;
-		rootElement.append('- ', i18n.t('badges.' + iconType), ': ', i18n.t('status.' + status), document.createElement('br'));
+		const badgeIconName = document.createElement('u');
+		badgeIconName.innerText = i18n.t('badges.' + iconType);
+		rootElement.append('- ', badgeIconName, ': ', i18n.t('status.' + status), document.createElement('br'), document.createElement('br'));
 	}
 
 	rootElement.append(document.createElement('br'));
