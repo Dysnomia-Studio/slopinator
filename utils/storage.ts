@@ -21,5 +21,8 @@ export const appsGreyingConfig = storage.defineItem<AppGreyingConfig>("local:app
 		voice: {
 			ai: true,
 		},
+		writing: {
+			ai: true,
+		},
 	}
 },);
