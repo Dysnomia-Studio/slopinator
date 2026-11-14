@@ -1,0 +1,16 @@
+{
+    "name": "Creepy Redneck Dinosaur Mansion 1 Re-Raptored",
+    "steamStoreAppId": "3830150",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
