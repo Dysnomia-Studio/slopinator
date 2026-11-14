@@ -1,0 +1,16 @@
+{
+    "name": "A YEAR OF SPRINGS",
+    "steamStoreAppId": "1688580",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
