@@ -1,0 +1,16 @@
+{
+    "name": "Best Day Ever",
+    "steamStoreAppId": "1286380",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
