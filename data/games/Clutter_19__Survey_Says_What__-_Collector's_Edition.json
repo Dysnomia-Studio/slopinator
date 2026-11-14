@@ -1,0 +1,16 @@
+{
+    "name": "Clutter 19: Survey Says What? - Collector's Edition",
+    "steamStoreAppId": "4457030",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
