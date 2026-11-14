@@ -2,7 +2,7 @@
     "name": "The Nameless City",
     "steamStoreAppId": "2987830",
     "aiFlags": {
-        "art": "human",
+        "art": "past",
         "code": "human",
         "marketing": "human",
         "sound": "human",
@@ -11,6 +11,7 @@
         "writing": "human"
     },
     "sources": [
-        "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r",
+        "https://store.steampowered.com/news/app/2987830/view/613182487250601806"
     ]
 }
