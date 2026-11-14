@@ -1,0 +1,16 @@
+{
+    "name": "Jewel Match Aquascapes Collector's Edition",
+    "steamStoreAppId": "2313420",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
