@@ -1,0 +1,16 @@
+{
+    "name": "Squeakross: Home Squeak Home",
+    "steamStoreAppId": "2871440",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
