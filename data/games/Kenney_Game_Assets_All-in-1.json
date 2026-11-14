@@ -1,0 +1,16 @@
+{
+    "name": "Kenney Game Assets All-in-1",
+    "steamStoreAppId": "4059160",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
