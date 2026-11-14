@@ -1,0 +1,16 @@
+{
+    "name": "ACUVAC: A Suck and Blow Adventure",
+    "steamStoreAppId": "2333940",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
