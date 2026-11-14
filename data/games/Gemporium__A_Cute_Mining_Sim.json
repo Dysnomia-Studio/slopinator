@@ -1,0 +1,16 @@
+{
+    "name": "Gemporium: A Cute Mining Sim",
+    "steamStoreAppId": "2836100",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://aftermath.site/video-games-no-ai/"
+    ]
+}
