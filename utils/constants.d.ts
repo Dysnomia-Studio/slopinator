@@ -6,5 +6,5 @@ export declare const STATUS_TYPES_WARNING: number;
 type AppMetadata = { parentAppId: number, aiDisclosed?: boolean }
 declare global {
 	var appMetadata: { [key: number]: AppMetadata };
-	var i18n: { t: (v: string) => string }; 
+	var i18n: { t: (v: string, keys?: { [key: string]: string }) => string }; 
 }

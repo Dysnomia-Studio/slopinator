@@ -26,3 +26,7 @@ popup:
   contribute_msg: 'Contribute to the database here :)'
   greying_title: 'Grey out the following apps:'
   badges_status_details: 'Badges status details:'
+  changelogs: 'Changelogs'
+changelog_popup:
+  text: 'Slop-Inator has been updated to {version}.'
+  link: 'Click here to read the changes.'

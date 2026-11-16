@@ -72,6 +72,8 @@ function App() {
 			<img src="/doof-pic.png" alt="Behold! The Slop-Inator!" />
 			<h2><a href="https://github.com/Dysnomia-Studio/slopinator#contribution" target='_blank'>{i18n.t('popup.contribute_msg')}</a></h2>
 			<hr />
+			<h2><a href={`https://github.com/Dysnomia-Studio/slopinator/releases/tag/v${browser.runtime.getManifest().version}`} target='_blank'>{i18n.t('popup.changelogs')}</a></h2>
+			<hr />
 			<h2>{i18n.t('popup.greying_title')}</h2>
 			<AppFilterTable />
 		</>

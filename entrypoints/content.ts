@@ -6,6 +6,33 @@ import { GENAI_BADGES, STATUS_TYPES } from '../utils/constants';
 import SteamAppListBeforeGpt from './steam_app_before_gpt';
 import SteamAppData from './steam_app_data';
 
+function showUpdatePopup() {
+	const version = browser.runtime.getManifest().version;
+	// TODO: make it compatible with multiple websites
+	if (localStorage.slopinator_version === version) {
+		return; 
+	}
+
+	localStorage.slopinator_version = version;
+
+	const updatePopup = document.createElement('div');
+	updatePopup.style = 'position: fixed; top: 1rem; right: 1rem; background: rgb(17, 28, 39); width: 200px; font-size: 1rem; padding: 15px; z-index: 10000; border: 1px solid white;';
+
+	const closeBtn = document.createElement('div');
+	closeBtn.innerText = 'X';
+	closeBtn.style = 'position: absolute; top: 5px; right: 8px; cursor: pointer;';
+	closeBtn.addEventListener('click', () => updatePopup.style = 'display: none;');
+
+	const link = document.createElement('a');
+	link.href = `https://github.com/Dysnomia-Studio/slopinator/releases/tag/v${browser.runtime.getManifest().version}`;
+	link.target = '_blank';
+	link.innerText = i18n.t('changelog_popup.link');
+
+	updatePopup.append(closeBtn, i18n.t('changelog_popup.text', { version }), document.createElement('br'), document.createElement('br'), link);
+
+	document.body.appendChild(updatePopup);
+}
+
 let config: AppGreyingConfig | null = null;
 async function greyOutIfNeeded(element: HTMLElement, appId: number) {
 	if (!config) {
@@ -272,12 +299,13 @@ const tasks: { [key: string]: () => Promise<void> } = {
 	'setFrontPageCarouselBadges': setFrontPageCarouselBadges,
 	'setPageCarouselBadges': setPageCarouselBadges,
 	'setPersonalCalendarPageBadges': setPersonalCalendarPageBadges,
-}
+};
 
 export default defineContentScript({
 	matches: ['*://store.steampowered.com/*'],
 	main() {
 		updateGreyingConfig();
+		showUpdatePopup();
 
 		if (globalThis.location.href.startsWith('https://store.steampowered.com/app/')) {
 			setSteamStorePageBadges();
