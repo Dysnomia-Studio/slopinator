@@ -1,0 +1,16 @@
+{
+    "name": "Arma 3",
+    "steamStoreAppId": "107410",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/107410/Arma_3/"
+    ]
+}
