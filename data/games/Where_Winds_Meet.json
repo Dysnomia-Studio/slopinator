@@ -1,0 +1,16 @@
+{
+    "name": "Where Winds Meet",
+    "steamStoreAppId": "3564740",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "ai",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3564740/Where_Winds_Meet/"
+    ]
+}
