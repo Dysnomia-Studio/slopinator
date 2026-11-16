@@ -1,0 +1,16 @@
+{
+    "name": "Esports Manager 2026",
+    "steamStoreAppId": "2749950",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2749950/Esports_Manager_2026/"
+    ]
+}
