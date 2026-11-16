@@ -1,0 +1,16 @@
+{
+    "name": "X4: Foundations",
+    "steamStoreAppId": "392160",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/392160/X4_Foundations/"
+    ]
+}
