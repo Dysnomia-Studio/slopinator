@@ -1,0 +1,16 @@
+{
+    "name": "Space Station Designer",
+    "steamStoreAppId": "1447650",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1447650/Space_Station_Designer/"
+    ]
+}
