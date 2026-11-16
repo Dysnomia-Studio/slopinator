@@ -1,0 +1,16 @@
+{
+    "name": "The Outlast Trials",
+    "steamStoreAppId": "1304930",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1304930/The_Outlast_Trials/"
+    ]
+}
