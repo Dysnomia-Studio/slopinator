@@ -1,0 +1,16 @@
+{
+    "name": "Spellmasons",
+    "steamStoreAppId": "1618380",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1618380/Spellmasons/"
+    ]
+}
