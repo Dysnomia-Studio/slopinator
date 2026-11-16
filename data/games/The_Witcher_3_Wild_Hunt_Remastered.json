@@ -1,0 +1,16 @@
+{
+    "name": "The Witcher 3: Wild Hunt — Remastered",
+    "steamStoreAppId": "292030",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://www.rockpapershotgun.com/one-of-those-ways-where-you-can-use-ai-ethically-cdpr-have-modified-geralts-polish-voice-in-the-witcher-3-songs-of-the-past-with-genai-due-to-actors-stroke"
+    ]
+}
