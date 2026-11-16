@@ -83,6 +83,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "107410": {
+        "translation": 5,
+        "sources": [
+            "https://store.steampowered.com/app/107410/Arma_3/"
+        ]
+    },
     "113020": {
         "art": 1,
         "code": 1,
@@ -276,6 +282,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "292030": {
+        "voice": 5,
+        "sources": [
+            "https://www.rockpapershotgun.com/one-of-those-ways-where-you-can-use-ai-ethically-cdpr-have-modified-geralts-polish-voice-in-the-witcher-3-songs-of-the-past-with-genai-due-to-actors-stroke"
+        ]
+    },
     "301280": {
         "art": 1,
         "code": 1,
@@ -467,6 +479,12 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "392160": {
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/392160/X4_Foundations/"
         ]
     },
     "398940": {
@@ -1522,6 +1540,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "1304930": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1304930/The_Outlast_Trials/"
+        ]
+    },
     "1310330": {
         "art": 1,
         "code": 1,
@@ -1609,6 +1633,13 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "1447650": {
+        "art": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1447650/Space_Station_Designer/"
+        ]
+    },
     "1448780": {
         "art": 1,
         "code": 1,
@@ -1619,6 +1650,12 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "1465460": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1465460/Infection_Free_Zone/"
         ]
     },
     "1478500": {
@@ -1868,6 +1905,13 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "1618380": {
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1618380/Spellmasons/"
         ]
     },
     "1629660": {
@@ -3101,6 +3145,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "2749950": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/2749950/Esports_Manager_2026/"
+        ]
+    },
     "2769240": {
         "art": 1,
         "code": 1,
@@ -4103,6 +4153,15 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "3564740": {
+        "art": 5,
+        "translation": 5,
+        "voice": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3564740/Where_Winds_Meet/"
+        ]
+    },
     "3568640": {
         "art": 1,
         "code": 1,
@@ -4319,6 +4378,18 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "3687090": {
+        "art": 1,
+        "code": 1,
+        "marketing": 1,
+        "sound": 1,
+        "translation": 1,
+        "voice": 1,
+        "writing": 1,
+        "sources": [
+            "https://steamcommunity.com/app/3687090/discussions/0/585058037498247083/"
         ]
     },
     "3718960": {
@@ -5298,6 +5369,15 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "5185890": {
+        "art": 5,
+        "code": 5,
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5185890/Zombies_Arent_Real/"
+        ]
+    },
     "5206520": {
         "art": 1,
         "code": 1,
@@ -5345,6 +5425,16 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "5475960": {
+        "art": 1,
+        "code": 5,
+        "sound": 1,
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5475960/Incremental_Traffic/"
         ]
     },
     "5518060": {
