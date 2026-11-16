@@ -1,0 +1,16 @@
+{
+    "name": "Incremental Traffic",
+    "steamStoreAppId": "5475960",
+    "aiFlags": {
+        "art": "human",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5475960/Incremental_Traffic/"
+    ]
+}
