@@ -1,0 +1,16 @@
+{
+    "name": "Zombies Aren't Real",
+    "steamStoreAppId": "5185890",
+    "aiFlags": {
+        "art": "ai",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5185890/Zombies_Arent_Real/"
+    ]
+}
