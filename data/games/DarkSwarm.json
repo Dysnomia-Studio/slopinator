@@ -1,0 +1,16 @@
+{
+    "name": "DarkSwarm",
+    "steamStoreAppId": "2303200",
+    "aiFlags": {
+        "art": "human",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "unknown",
+        "voice": "human",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2303200/DarkSwarm/"
+    ]
+}
