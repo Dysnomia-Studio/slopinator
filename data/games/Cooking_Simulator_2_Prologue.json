@@ -1,0 +1,16 @@
+{
+    "name": "Cooking Simulator 2: Prologue",
+    "steamStoreAppId": "3038500",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3038500/Cooking_Simulator_2_Prologue/"
+    ]
+}
