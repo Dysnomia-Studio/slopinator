@@ -1,0 +1,16 @@
+{
+    "name": "Front Edge",
+    "steamStoreAppId": "2999670",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2999670/Front_Edge/"
+    ]
+}
