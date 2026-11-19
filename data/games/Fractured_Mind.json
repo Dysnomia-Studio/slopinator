@@ -1,0 +1,16 @@
+{
+    "name": "Fractured Mind",
+    "steamStoreAppId": "2885330",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2885330/Fractured_Mind/"
+    ]
+}
