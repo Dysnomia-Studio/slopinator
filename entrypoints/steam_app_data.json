@@ -3311,6 +3311,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "2885330": {
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/2885330/Fractured_Mind/"
+        ]
+    },
     "2906890": {
         "art": 1,
         "code": 1,
@@ -3467,6 +3473,13 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "2999670": {
+        "translation": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/2999670/Front_Edge/"
+        ]
+    },
     "3008190": {
         "art": 1,
         "code": 1,
@@ -3507,6 +3520,12 @@
         "art": 5,
         "sources": [
             "https://store.steampowered.com/app/3036080/Shawarma_Legend/"
+        ]
+    },
+    "3038500": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3038500/Cooking_Simulator_2_Prologue/"
         ]
     },
     "3041220": {
@@ -3824,10 +3843,24 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "3274530": {
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3274530/Epitome/"
+        ]
+    },
     "3274580": {
         "art": 5,
         "sources": [
             "https://store.steampowered.com/app/3274580/Anno_117_Pax_Romana/"
+        ]
+    },
+    "3281420": {
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3281420/Paradise/"
         ]
     },
     "3285550": {
@@ -4465,6 +4498,12 @@
         "voice": 5,
         "sources": [
             "https://store.steampowered.com/app/3740090/Bruisers_2D_Boxing/"
+        ]
+    },
+    "3764400": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/3764400/LIMIT_ZERO_BREAKERS/"
         ]
     },
     "3769010": {
