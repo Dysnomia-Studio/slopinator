@@ -1,0 +1,16 @@
+{
+    "name": "Epitome",
+    "steamStoreAppId": "3274530",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/3274530/Epitome/"
+    ]
+}
