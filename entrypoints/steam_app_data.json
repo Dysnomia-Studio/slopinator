@@ -1036,6 +1036,15 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "940230": {
+        "art": 5,
+        "marketing": 5,
+        "translation": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/940230/Geoplanetical/"
+        ]
+    },
     "957820": {
         "art": 1,
         "code": 1,
@@ -1525,7 +1534,8 @@
         "voice": 0,
         "writing": 1,
         "sources": [
-            "Slop-Inator developer created this game!"
+            "Slop-Inator developer created this game!",
+            "https://blog.dysnomia.studio/blog/en/2026-11-18_generative_ai/"
         ]
     },
     "1300330": {
@@ -2115,7 +2125,8 @@
         "voice": 0,
         "writing": 1,
         "sources": [
-            "Slop-Inator developer created this game!"
+            "Slop-Inator developer created this game!",
+            "https://blog.dysnomia.studio/blog/en/2026-11-18_generative_ai/"
         ]
     },
     "1747670": {
@@ -2552,6 +2563,19 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "2146380": {
+        "art": 1,
+        "code": 1,
+        "marketing": 4,
+        "sound": 1,
+        "translation": 1,
+        "voice": 1,
+        "writing": 1,
+        "sources": [
+            "Slop-Inator developer created this game!",
+            "https://blog.dysnomia.studio/blog/en/2026-11-18_generative_ai/"
         ]
     },
     "2153050": {
@@ -4707,7 +4731,8 @@
         "voice": 0,
         "writing": 1,
         "sources": [
-            "Slop-Inator developer created this game!"
+            "Slop-Inator developer created this game!",
+            "https://blog.dysnomia.studio/blog/en/2026-11-18_generative_ai/"
         ]
     },
     "3940440": {
@@ -4961,6 +4986,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "4262460": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/4262460/ROB_RUN/"
+        ]
+    },
     "4268820": {
         "art": 1,
         "code": 1,
@@ -5055,6 +5086,13 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "4459590": {
+        "art": 5,
+        "marketing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/4459590/Slotbound/"
+        ]
+    },
     "4462400": {
         "art": 1,
         "code": 1,
@@ -5101,6 +5139,15 @@
         "writing": 1,
         "sources": [
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
+        ]
+    },
+    "4493130": {
+        "art": 1,
+        "sound": 1,
+        "translation": 5,
+        "writing": 1,
+        "sources": [
+            "https://store.steampowered.com/app/4493130/SkiEO_Ski_Resort_Tycoon/"
         ]
     },
     "4630570": {
@@ -5425,6 +5472,24 @@
             "https://store.steampowered.com/app/5185890/Zombies_Arent_Real/"
         ]
     },
+    "5196330": {
+        "art": 4,
+        "code": 5,
+        "marketing": 5,
+        "sound": 4,
+        "translation": 5,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5196330/IT_THINKS_Build_Your_Own_GPU/",
+            "https://steamcommunity.com/app/5196330/discussions/0/571554017506762270/"
+        ]
+    },
+    "5200620": {
+        "translation": 5,
+        "sources": [
+            "https://www.reddit.com/r/incremental_games/comments/1w8xp63/ive_just_released_a_demo_to_my_second_commercial/"
+        ]
+    },
     "5206520": {
         "art": 1,
         "code": 1,
@@ -5460,6 +5525,14 @@
         "translation": 5,
         "sources": [
             "https://store.steampowered.com/app/5335510/Moon_Sweepers/"
+        ]
+    },
+    "5378110": {
+        "code": 5,
+        "sound": 5,
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5378110/One_More_Lawn/"
         ]
     },
     "5442050": {
