@@ -1,0 +1,16 @@
+{
+    "name": "Ski-E-O! Ski Resort Tycoon",
+    "steamStoreAppId": "4493130",
+    "aiFlags": {
+        "art": "human",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "human"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4493130/SkiEO_Ski_Resort_Tycoon/"
+    ]
+}
