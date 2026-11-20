@@ -1,0 +1,16 @@
+{
+    "name": "Dungeonbound",
+    "steamStoreAppId": "5200620",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://www.reddit.com/r/incremental_games/comments/1w8xp63/ive_just_released_a_demo_to_my_second_commercial/"
+    ]
+}
