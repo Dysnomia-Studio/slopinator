@@ -1,0 +1,16 @@
+{
+    "name": "Slotbound",
+    "steamStoreAppId": "4459590",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4459590/Slotbound/"
+    ]
+}
