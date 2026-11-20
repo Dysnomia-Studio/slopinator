@@ -1,0 +1,17 @@
+{
+    "name": "Manufactur’ inc.",
+    "steamStoreAppId": "2146380",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "past",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "Slop-Inator developer created this game!",
+        "https://blog.dysnomia.studio/blog/en/2026-11-18_generative_ai/"
+    ]
+}
