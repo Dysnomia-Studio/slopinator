@@ -1,0 +1,16 @@
+{
+    "name": "Geoplanetical",
+    "steamStoreAppId": "940230",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/940230/Geoplanetical/"
+    ]
+}
