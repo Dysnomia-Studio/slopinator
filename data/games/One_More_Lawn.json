@@ -1,0 +1,16 @@
+{
+    "name": "One More Lawn",
+    "steamStoreAppId": "5378110",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "ai",
+        "marketing": "unknown",
+        "sound": "ai",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5378110/One_More_Lawn/"
+    ]
+}
