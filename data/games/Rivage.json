@@ -1,0 +1,16 @@
+{
+    "name": "Rivage",
+    "steamStoreAppId": "4094660",
+    "aiFlags": {
+        "art": "past",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/4094660/Rivage/"
+    ]
+}
