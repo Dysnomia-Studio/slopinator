@@ -1,0 +1,16 @@
+{
+    "name": "Defilade",
+    "steamStoreAppId": "5246700",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "human",
+        "translation": "ai",
+        "voice": "human",
+        "writing": "ai"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5246700/Defilade/"
+    ]
+}
