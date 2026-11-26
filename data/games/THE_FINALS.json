@@ -1,0 +1,16 @@
+{
+    "name": "THE FINALS",
+    "steamStoreAppId": "2073850",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2073850/THE_FINALS/"
+    ]
+}
