@@ -2193,6 +2193,12 @@
             "https://aftermath.site/video-games-no-ai/"
         ]
     },
+    "1757300": {
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/1757300/Jump_Space/"
+        ]
+    },
     "1764240": {
         "art": 1,
         "code": 1,
@@ -2519,6 +2525,12 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "2073850": {
+        "voice": 5,
+        "sources": [
+            "https://store.steampowered.com/app/2073850/THE_FINALS/"
         ]
     },
     "2091930": {
@@ -3353,6 +3365,14 @@
         "writing": 1,
         "sources": [
             "https://aftermath.site/video-games-no-ai/"
+        ]
+    },
+    "2828020": {
+        "art": 5,
+        "marketing": 5,
+        "sound": 5,
+        "sources": [
+            "https://store.steampowered.com/app/2828020/Citystate_Metropolis/"
         ]
     },
     "2828590": {
@@ -5495,6 +5515,12 @@
             "https://web.archive.org/web/20260000000000*/https://store.steampowered.com/curator/46307989/sale/GamesWithoutAI"
         ]
     },
+    "4094660": {
+        "art": 4,
+        "sources": [
+            "https://store.steampowered.com/app/4094660/Rivage/"
+        ]
+    },
     "4094890": {
         "art": 1,
         "code": 1,
@@ -6722,11 +6748,33 @@
             "https://bsky.app/starter-pack/eternalskies.neocities.org/3mmorik3mu52r"
         ]
     },
+    "5246700": {
+        "art": 5,
+        "sound": 1,
+        "translation": 5,
+        "voice": 1,
+        "writing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5246700/Defilade/"
+        ]
+    },
+    "5275590": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5275590/Dirt_Town/"
+        ]
+    },
     "5301770": {
         "art": 5,
         "code": 5,
         "sources": [
             "https://store.steampowered.com/app/5301770/Visceral/"
+        ]
+    },
+    "5306540": {
+        "art": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5306540/Groundwork_Simulator/"
         ]
     },
     "5335510": {
@@ -6770,6 +6818,18 @@
         "voice": 5,
         "sources": [
             "https://store.steampowered.com/app/5518060/Flarefall/"
+        ]
+    },
+    "5527800": {
+        "translation": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5527800/No_Asteroids/"
+        ]
+    },
+    "5529210": {
+        "marketing": 5,
+        "sources": [
+            "https://store.steampowered.com/app/5529210/Auto_Mechanic_Tidy_Up/"
         ]
     }
 }
