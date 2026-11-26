@@ -1,0 +1,16 @@
+{
+    "name": "Groundwork Simulator",
+    "steamStoreAppId": "5306540",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5306540/Groundwork_Simulator/"
+    ]
+}
