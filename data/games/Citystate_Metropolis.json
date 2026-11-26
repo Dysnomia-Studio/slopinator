@@ -1,0 +1,16 @@
+{
+    "name": "Citystate Metropolis",
+    "steamStoreAppId": "2828020",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "ai",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/2828020/Citystate_Metropolis/"
+    ]
+}
