@@ -1,0 +1,16 @@
+{
+    "name": "Jump Space",
+    "steamStoreAppId": "1757300",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "ai",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/1757300/Jump_Space/"
+    ]
+}
