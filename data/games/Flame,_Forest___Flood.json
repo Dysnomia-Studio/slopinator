@@ -1,0 +1,17 @@
+{
+    "name": "Flame, Forest & Flood",
+    "steamStoreAppId": "3096460",
+    "aiFlags": {
+        "art": "human",
+        "code": "human",
+        "marketing": "human",
+        "sound": "human",
+        "translation": "human",
+        "voice": "human",
+        "writing": "human"
+    },
+    "sources": [
+        "https://store.steampowered.com/curator/46307989/sale/GamesWithoutAI",
+        "https://web.archive.org/web/20260000000000*/https://store.steampowered.com/curator/46307989/sale/GamesWithoutAI"
+    ]
+}
