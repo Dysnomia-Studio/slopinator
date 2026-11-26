@@ -1,0 +1,16 @@
+{
+    "name": "No Asteroids",
+    "steamStoreAppId": "5527800",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "ai",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5527800/No_Asteroids/"
+    ]
+}
