@@ -1,0 +1,16 @@
+{
+    "name": "Auto Mechanic Tidy Up",
+    "steamStoreAppId": "5529210",
+    "aiFlags": {
+        "art": "unknown",
+        "code": "unknown",
+        "marketing": "ai",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5529210/Auto_Mechanic_Tidy_Up/"
+    ]
+}
