@@ -1,0 +1,16 @@
+{
+    "name": "Dirt Town",
+    "steamStoreAppId": "5275590",
+    "aiFlags": {
+        "art": "ai",
+        "code": "unknown",
+        "marketing": "unknown",
+        "sound": "unknown",
+        "translation": "unknown",
+        "voice": "unknown",
+        "writing": "unknown"
+    },
+    "sources": [
+        "https://store.steampowered.com/app/5275590/Dirt_Town/"
+    ]
+}
